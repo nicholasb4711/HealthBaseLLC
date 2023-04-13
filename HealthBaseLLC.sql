@@ -158,41 +158,26 @@ CREATE TABLE Meals (
 -- Create FoodCategory table
 CREATE TABLE FoodCategory (
   CategoryID INT PRIMARY KEY,
-  CategoryName VARCHAR(50) NOT NULL,
-  CategoryDesc TEXT NOT NULL
+  CategoryName TEXT NOT NULL,
+  CategoryDesc TEXT NOT NULL,
+  FoodID INT,
+  FOREIGN KEY (FoodID) REFERENCES Foods(FoodID)
+                   ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
 -- Create Foods table
 CREATE TABLE Foods (
   FoodID INT PRIMARY KEY,
-  GramsServing INT NOT NULL,
+  ServingSizeGrams INT NOT NULL,
   Calories INT NOT NULL,
   Protein INT NOT NULL,
   Fat INT NOT NULL,
   Carbs INT NOT NULL,
-  FoodName VARCHAR(50) NOT NULL,
+  FoodName TEXT NOT NULL,
   CategoryID INT,
+  PlanID INT,
   FOREIGN KEY (CategoryID) REFERENCES FoodCategory(CategoryID)
+                   ON UPDATE CASCADE ON DELETE RESTRICT,
+  FOREIGN KEY (PlanID) REFERENCES MealPlan(MealPlanID)
+                   ON UPDATE CASCADE ON DELETE RESTRICT
 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
