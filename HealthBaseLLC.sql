@@ -82,7 +82,7 @@ CREATE TABLE ExercisePlan (
   PlanID INT PRIMARY KEY,
   NumSets INT NOT NULL,
   NumReps INT NOT NULL,
-  WeightLbs NOT NULL,
+  WeightLbs INT NOT NULL,
   ExerciseID INT,
   WorkoutID INT,
   FOREIGN KEY (ExerciseID) REFERENCES Exercise(ExerciseID)
