@@ -44,7 +44,7 @@ VALUES (1, 'Weight Loss', 'I want to lose weight, and I dont care about muscle r
        (24, 'Functional Fitness', NULL);
 
 
--- -----------------------------------------------------------
+-- ------------------------------------------------------------
 
 -- Create User table
 CREATE TABLE User
@@ -63,12 +63,61 @@ CREATE TABLE User
 
 );
 
+-- Create User Data
+INSERT INTO User (TrainedBy, LastName, FirstName, Age, Height_in, Weight_lbs, Goal)
+VALUES (NULL, 'Garcia', 'Miguel', 23, 70, 160, 1),
+       (1, 'Wong', 'Michelle', 35, 63, 130, 3),
+       (2, 'Kim', 'Jin', 28, 68, 145, 2),
+       (1, 'Jackson', 'Avery', 29, 72, 190, 4),
+       (4, 'Gupta', 'Ravi', 31, 69, 155, 1),
+       (NULL, 'Patel', 'Jasmine', 27, 66, 135, 2),
+       (3, 'Brown', 'Jessica', 32, 70, 160, 3),
+       (6, 'Lee', 'Daniel', 25, 71, 170, 4),
+       (2, 'Smith', 'Emily', 26, 65, 125, 1),
+       (8, 'Singh', 'Aman', 30, 69, 150, 2),
+       (5, 'Thompson', 'Ashley', 33, 67, 140, 3),
+       (9, 'Johnson', 'Brian', 28, 73, 195, 4),
+       (10, 'Nguyen', 'Katie', 24, 64, 120, 1),
+       (7, 'Gonzalez', 'Antonio', 31, 68, 150, 2),
+       (NULL, 'Davis', 'Olivia', 29, 66, 135, 3),
+       (1, 'Hernandez', 'Sofia', 26, 67, 140, 4),
+       (NULL, 'Ramirez', 'Carlos', 27, 69, 155, 1),
+       (NULL, 'Anderson', 'Rachel', 30, 68, 145, 12),
+       (6, 'Taylor', 'Luke', 32, 73, 185, 3),
+       (NULL, 'Kumar', 'Anjali', 26, 64, 120, 4),
+       (7, 'Ng', 'Caleb', 29, 71, 165, 1),
+       (NULL, 'Chang', 'Grace', 31, 67, 140, 2),
+       (2, 'Martinez', 'Isabella', 28, 66, 135, 13),
+       (NULL, 'Lin', 'David', 33, 70, 160, 4),
+       (2, 'Gao', 'Sophia', 27, 68, 150, 1),
+       (10, 'Wilson', 'Nathan', 30, 72, 190, 2),
+       (NULL, 'Baker', 'Victoria', 28, 63, 130, 3),
+       (5, 'Kim', 'Soo', 29, 67, 140, 4),
+       (4, 'Brown', 'James', 26, 68, 145, 1),
+       (NULL, 'Hernandez', 'Andres', 32, 69, 155, 2),
+       (6, 'Chen', 'Eva', 27, 66, 135, 3),
+       (NULL, 'Jones', 'Liam', 28, 71, 165, 20);
+
+
+-- ------------------------------------------------------------
+
+
 -- Create MuscleGroup table
 CREATE TABLE MuscleGroup
 (
     MuscleGroupID   INT PRIMARY KEY AUTO_INCREMENT,
     MuscleGroupName VARCHAR(50) NOT NULL
 );
+
+INSERT INTO MuscleGroup(MuscleGroupID, MuscleGroupName)
+VALUES (1, 'Quadriceps'),
+       (2, 'Glutes'),
+       (3, 'Hamstrings'),
+       (4, 'Chest Muscles'),
+       (5, 'Back Muscles'),
+       (6, 'Abdominals'),
+       (7, 'Biceps and Triceps');
+
 
 -- Create FoodCategory table
 CREATE TABLE FoodCategory
