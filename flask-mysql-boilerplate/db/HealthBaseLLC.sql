@@ -43,7 +43,6 @@ VALUES (1, 'Weight Loss', 'I want to lose weight, and I dont care about muscle r
         'I want to improve my performance in a specific sport, increasing my skill level and physical abilities'),
        (24, 'Functional Fitness', NULL);
 
-
 -- -----------------------------------------------------------
 
 -- Create User table
