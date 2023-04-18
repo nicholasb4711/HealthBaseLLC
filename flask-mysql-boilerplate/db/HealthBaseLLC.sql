@@ -12,7 +12,17 @@ CREATE TABLE Goals
 
 -- Create Goals Data
 insert into Goals(GoalID, GoalName, GoalDesc)
-values (1, 'Weight Loss', 'I want to lose weight, and I dont care about muscle retention');
+values (1, 'Weight Loss', 'I want to lose weight, and I dont care about muscle retention'),
+       (2, 'Weight Gain', 'I want to become a giant walking truck, and I dont care how I get there'),
+       (3, 'Muscle Building', 'I want to focus on increasing my muscle mass and overall strength'),
+       (4, 'Cardiovascular Fitness', 'I want to improve my cardiovascular health and endurance'),
+       (5, 'Flexibility', 'I aim to increase my flexibility, allowing for better mobility and reduced injury risk'),
+       (6, 'Mindfulness',
+        'I want to incorporate mindfulness practices such as meditation into my daily routine to reduce stress and improve mental well-being'),
+       (7, 'Nutrition', 'I want to learn more about healthy eating habits and adopt a balanced diet'),
+       (8, 'Running a Marathon', 'My goal is to train and prepare for running a full marathon'),
+       (9, 'Improved Sleep', 'I want to improve my sleep quality and establish a consistent sleep schedule'),
+       (10, 'Body Recomposition', 'I aim to lose fat and gain muscle simultaneously for a more balanced physique');
 
 
 
