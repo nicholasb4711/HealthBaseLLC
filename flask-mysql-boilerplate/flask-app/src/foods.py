@@ -31,11 +31,14 @@ def get_all_categories():
 # Get all the foods from the database
 @foods.route('/foods', methods=['GET'])
 def get_foods():
+    query = '''
+        SELECT FoodID, ServingSizeGrams, FoodName FROM Foods
+    '''
     # get a cursor object from the database
     cursor = db.get_db().cursor()
 
     # use cursor to query the database for a list of foods
-    cursor.execute('SELECT id, product_code, product_name, list_price FROM foods')
+    cursor.execute(query)
 
     # grab the column headers from the returned data
     column_headers = [x[0] for x in cursor.description]
