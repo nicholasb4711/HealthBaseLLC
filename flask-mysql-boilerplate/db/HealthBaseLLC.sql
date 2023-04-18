@@ -44,7 +44,7 @@ VALUES (1, 'Weight Loss', 'I want to lose weight, and I dont care about muscle r
        (24, 'Functional Fitness', NULL);
 
 
---------------------------------------------------------------
+-- ------------------------------------------------------------
 
 -- Create User table
 CREATE TABLE User
@@ -99,7 +99,7 @@ VALUES (NULL, 'Garcia', 'Miguel', 23, 70, 160, 1),
        (NULL, 'Jones', 'Liam', 28, 71, 165, 20);
 
 
---------------------------------------------------------------
+-- ------------------------------------------------------------
 
 
 -- Create MuscleGroup table
@@ -110,7 +110,13 @@ CREATE TABLE MuscleGroup
 );
 
 INSERT INTO MuscleGroup(MuscleGroupID, MuscleGroupName)
-VALUES (1, "Quadriceps"), (2, "Glutes"), (3, 'Hamstrings'), (4, 'Chest Muscles'), (5, 'Back Muscles'), (6, 'Abdominals'), (7, 'Biceps and Triceps');
+VALUES (1, 'Quadriceps'),
+       (2, 'Glutes'),
+       (3, 'Hamstrings'),
+       (4, 'Chest Muscles'),
+       (5, 'Back Muscles'),
+       (6, 'Abdominals'),
+       (7, 'Biceps and Triceps');
 
 
 -- Create FoodCategory table
