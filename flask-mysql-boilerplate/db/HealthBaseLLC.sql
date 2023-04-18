@@ -6,7 +6,7 @@ USE healthdb;
 CREATE TABLE Goals
 (
     GoalID   INT AUTO_INCREMENT PRIMARY KEY,
-    GoalName VARCHAR(30),
+    GoalName VARCHAR(30) NOT NULL,
     GoalDesc TEXT
 );
 
@@ -22,8 +22,26 @@ VALUES (1, 'Weight Loss', 'I want to lose weight, and I dont care about muscle r
        (7, 'Nutrition', 'I want to learn more about healthy eating habits and adopt a balanced diet'),
        (8, 'Running a Marathon', 'My goal is to train and prepare for running a full marathon'),
        (9, 'Improved Sleep', 'I want to improve my sleep quality and establish a consistent sleep schedule'),
-       (10, 'Body Recomposition', 'I aim to lose fat and gain muscle simultaneously for a more balanced physique');
-
+       (10, 'Body Recomposition', 'I aim to lose fat and gain muscle simultaneously for a more balanced physique'),
+       (11, 'Swimming Performance', 'I want to improve my swimming skills and increase my endurance in the water'),
+       (12, 'Yoga Practice', 'I aim to deepen my yoga practice, focusing on strength, flexibility, and balance'),
+       (13, 'Injury Recovery', 'I want to recover from my injury and regain my previous fitness levels'),
+       (14, 'Cycling Endurance',
+        'I want to build my cycling endurance and participate in long-distance cycling events'),
+       (15, 'Posture Improvement',
+        'I aim to improve my posture to reduce back pain and enhance overall body alignment'),
+       (16, 'Bodyweight Fitness', NULL),
+       (17, 'Climbing Skills', 'I aim to develop my rock climbing skills and increase my climbing endurance'),
+       (18, 'Dance Performance', NULL),
+       (19, 'Triathlon Training',
+        'I want to train and compete in a triathlon, focusing on swimming, cycling, and running'),
+       (20, 'Hiking Preparation', NULL),
+       (21, 'Increased Stamina',
+        'I want to build my stamina, allowing me to participate in high-intensity activities for longer periods'),
+       (22, 'Group Fitness', NULL),
+       (23, 'Sports Performance',
+        'I want to improve my performance in a specific sport, increasing my skill level and physical abilities'),
+       (24, 'Functional Fitness', NULL);
 
 
 -- -----------------------------------------------------------
