@@ -5,14 +5,14 @@ USE healthdb;
 -- Create Goals table
 CREATE TABLE Goals
 (
-    GoalID   INT PRIMARY KEY,
-    GoalName VARCHAR(50),
+    GoalID   INT AUTO_INCREMENT PRIMARY KEY,
+    GoalName VARCHAR(30),
     GoalDesc TEXT
 );
 
 -- Create Goals Data
-insert into Goals(GoalID, GoalName, GoalDesc)
-values (1, 'Weight Loss', 'I want to lose weight, and I dont care about muscle retention'),
+INSERT INTO Goals(GoalID, GoalName, GoalDesc)
+VALUES (1, 'Weight Loss', 'I want to lose weight, and I dont care about muscle retention'),
        (2, 'Weight Gain', 'I want to become a giant walking truck, and I dont care how I get there'),
        (3, 'Muscle Building', 'I want to focus on increasing my muscle mass and overall strength'),
        (4, 'Cardiovascular Fitness', 'I want to improve my cardiovascular health and endurance'),
