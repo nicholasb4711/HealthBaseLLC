@@ -109,6 +109,10 @@ CREATE TABLE MuscleGroup
     MuscleGroupName VARCHAR(50) NOT NULL
 );
 
+INSERT INTO MuscleGroup(MuscleGroupID, MuscleGroupName)
+VALUES (1, "Quadriceps"), (2, "Glutes"), (3, 'Hamstrings'), (4, 'Chest Muscles'), (5, 'Back Muscles'), (6, 'Abdominals'), (7, 'Biceps and Triceps');
+
+
 -- Create FoodCategory table
 CREATE TABLE FoodCategory
 (
