@@ -44,7 +44,7 @@ VALUES (1, 'Weight Loss', 'I want to lose weight, and I dont care about muscle r
        (24, 'Functional Fitness', NULL);
 
 
--- ------------------------------------------------------------
+--------------------------------------------------------------
 
 -- Create User table
 CREATE TABLE User
@@ -69,17 +69,17 @@ VALUES (NULL, 'Garcia', 'Miguel', 23, 70, 160, 1),
        (1, 'Wong', 'Michelle', 35, 63, 130, 3),
        (2, 'Kim', 'Jin', 28, 68, 145, 2),
        (1, 'Jackson', 'Avery', 29, 72, 190, 4),
-       (4, 'Gupta', 'Ravi', 31, 69, 155, 1),
+       (4, 'Gupta', 'Ravi', 18, 69, 155, 1),
        (NULL, 'Patel', 'Jasmine', 27, 66, 135, 2),
        (3, 'Brown', 'Jessica', 32, 70, 160, 3),
-       (6, 'Lee', 'Daniel', 25, 71, 170, 4),
+       (6, 'Lee', 'Daniel', 75, 71, 170, 4),
        (2, 'Smith', 'Emily', 26, 65, 125, 1),
        (8, 'Singh', 'Aman', 30, 69, 150, 2),
        (5, 'Thompson', 'Ashley', 33, 67, 140, 3),
        (9, 'Johnson', 'Brian', 28, 73, 195, 4),
        (10, 'Nguyen', 'Katie', 24, 64, 120, 1),
        (7, 'Gonzalez', 'Antonio', 31, 68, 150, 2),
-       (NULL, 'Davis', 'Olivia', 29, 66, 135, 3),
+       (NULL, 'Davis', 'Olivia', 19, 66, 135, 3),
        (1, 'Hernandez', 'Sofia', 26, 67, 140, 4),
        (NULL, 'Ramirez', 'Carlos', 27, 69, 155, 1),
        (NULL, 'Anderson', 'Rachel', 30, 68, 145, 12),
@@ -88,18 +88,18 @@ VALUES (NULL, 'Garcia', 'Miguel', 23, 70, 160, 1),
        (7, 'Ng', 'Caleb', 29, 71, 165, 1),
        (NULL, 'Chang', 'Grace', 31, 67, 140, 2),
        (2, 'Martinez', 'Isabella', 28, 66, 135, 13),
-       (NULL, 'Lin', 'David', 33, 70, 160, 4),
-       (2, 'Gao', 'Sophia', 27, 68, 150, 1),
+       (NULL, 'Lin', 'David', 54, 70, 160, 4),
+       (2, 'Gao', 'Sophia', 20, 68, 150, 1),
        (10, 'Wilson', 'Nathan', 30, 72, 190, 2),
        (NULL, 'Baker', 'Victoria', 28, 63, 130, 3),
        (5, 'Kim', 'Soo', 29, 67, 140, 4),
-       (4, 'Brown', 'James', 26, 68, 145, 1),
+       (4, 'Brown', 'James', 61, 68, 145, 1),
        (NULL, 'Hernandez', 'Andres', 32, 69, 155, 2),
        (6, 'Chen', 'Eva', 27, 66, 135, 3),
        (NULL, 'Jones', 'Liam', 28, 71, 165, 20);
 
 
--- ------------------------------------------------------------
+--------------------------------------------------------------
 
 
 -- Create MuscleGroup table
@@ -110,13 +110,14 @@ CREATE TABLE MuscleGroup
 );
 
 INSERT INTO MuscleGroup(MuscleGroupID, MuscleGroupName)
-VALUES (1, 'Quadriceps'),
-       (2, 'Glutes'),
-       (3, 'Hamstrings'),
-       (4, 'Chest Muscles'),
-       (5, 'Back Muscles'),
-       (6, 'Abdominals'),
-       (7, 'Biceps and Triceps');
+VALUES (1, "Quadriceps"), 
+       (2, "Glutes"), 
+       (3, 'Hamstrings'), 
+       (4, 'Chest Muscles'), 
+       (5, 'Back Muscles'), 
+       (6, 'Abdominals'), 
+       (7, 'Biceps');
+       (8, 'Triceps');
 
 
 -- Create FoodCategory table
@@ -141,203 +142,6 @@ CREATE TABLE Foods
     FOREIGN KEY (CategoryID) REFERENCES FoodCategory (CategoryID)
         ON UPDATE CASCADE ON DELETE RESTRICT
 );
-
-INSERT INTO Foods(FoodID, ServingSizeGrams, Calories, Protein, Fat, Carbs, FoodName, CategoryID)
-VALUES (1, 100, 200, 20, 10, 30, 'Chicken Breast', 1, 1);
-VALUES (2, 50, 50, 5, 3, 2, 'Egg', 2, 2);
-VALUES (3, 200, 300, 30, 15, 40, 'Salmon Fillet', 1, 3);
-VALUES (4, 150, 100, 8, 5, 12, 'Brown Rice', 3, 4);
-VALUES (5, 30, 40, 3, 2, 5, 'Cheddar Cheese', 4, 5);
-
-VALUES (6, 100, 150, 15, 7, 20, 'Beef Sirloin', 1, 6);
-
-VALUES (7, 150, 200, 25, 8, 25, 'Pork Loin', 1, 7);
-
-VALUES (8, 20, 10, 1, 0, 2, 'Spinach', 2, 8);
-
-VALUES (9, 100, 80, 2, 0, 20, 'Broccoli', 2, 9);
-
-VALUES (10, 50, 120, 6, 5, 10, 'Avocado', 4, 10);
-
-VALUES (11, 200, 250, 20, 10, 30, 'Tofu', 2, 11);
-
-VALUES (12, 100, 120, 12, 3, 15, 'Tuna', 1, 12);
-
-VALUES (13, 50, 60, 4, 2, 8, 'Black Beans', 3, 13);
-
-VALUES (14, 150, 100, 6, 3, 15, 'Quinoa', 3, 14);
-
-VALUES (15, 100, 120, 15, 2, 8, 'Shrimp', 1, 15);
-
-VALUES (16, 50, 70, 5, 2, 10, 'Almonds', 4, 16);
-
-VALUES (17, 100, 200, 25, 5, 15, 'Ground Turkey', 1, 17);
-
-VALUES (18, 150, 120, 8, 5, 10, 'Sweet Potato', 3, 18);
-
-VALUES (19, 30, 40, 2, 1, 5, 'Tomato', 2, 19);
-
-VALUES (20, 100, 180, 12, 8, 10, 'Salami', 1, 20);
-
-VALUES (21, 50, 60, 3, 2, 10, 'Peanut Butter', 4, 21);
-
-VALUES (22, 100, 100, 10, 5, 10, 'Cod Fillet', 1, 22);
-
-VALUES (23, 150, 150, 10, 8, 15, 'Pinto Beans', 3, 23);
-
-VALUES (24, 20, 20, 1, 1, 3, 'Lettuce', 2, 24);
-
-VALUES (25, 30, 50, 2, 2, 10, 'Onion', 2, 25);
-
-VALUES (26, 50, 70, 8, 2, 6, 'Chicken Thigh', 1, 26);
-
-VALUES (27, 150, 200, 12, 8, 15, 'Brown Rice', 3, 27);
-
-VALUES (28, 100, 130, 5, 6, 10, 'Smoked Salmon', 1, 28);
-
-VALUES (29, 50, 60, 4, 3, 6, 'Pork Chop', 1, 29);
-
-VALUES (30, 100, 120, 6, 3, 15, 'Tofu', 1, 30);
-
-VALUES (31, 30, 40, 2, 1, 5, 'Sesame Seeds', 3, 31);
-
-VALUES (32, 50, 60, 5, 2, 5, 'Peanut Butter', 3, 32);
-
-VALUES (33, 100, 90, 8, 2, 10, 'Cottage Cheese', 1, 33);
-
-VALUES (34, 150, 130, 10, 5, 10, 'Hummus', 3, 34);
-
-VALUES (35, 50, 50, 3, 2, 5, 'Almonds', 3, 35);
-
-VALUES (36, 100, 80, 3, 3, 15, 'Quinoa', 3, 36);
-
-VALUES (37, 50, 70, 2, 7, 5, 'Avocado', 3, 37);
-
-VALUES (38, 150, 190, 8, 5, 20, 'Sweet Potato', 2, 38);
-
-VALUES (39, 25, 30, 1, 1, 6, 'Cucumber', 2, 39);
-
-VALUES (40, 100, 150, 12, 5, 10, 'Salmon Fillet', 1, 40);
-
-VALUES (41, 50, 60, 4, 3, 6, 'Pork Loin', 1, 41);
-
-VALUES (42, 100, 120, 6, 3, 15, 'Tempeh', 1, 42);
-
-VALUES (43, 150, 200, 8, 7, 20, 'Beef Steak', 1, 43);
-
-VALUES (44, 50, 60, 2, 2, 10, 'Cashews', 3, 44);
-
-VALUES (45, 100, 60, 2, 0, 14, 'Spinach', 2, 45);
-
-VALUES (46, 50, 70, 3, 4, 5, 'Walnuts', 3, 46);
-
-VALUES (47, 150, 160, 10, 5, 10, 'Chicken Wing', 1, 47);
-
-VALUES (48, 100, 70, 3, 2, 12, 'Green Beans', 2, 48);
-
-VALUES (49, 50, 30, 2, 0, 6, 'Radishes', 2, 49);
-
-VALUES (50, 100, 160, 5, 7, 20, 'Tofu', 1, 50);
-
-VALUES (51, 150, 180, 9, 4, 20, 'Pinto Beans', 1, 51);
-
-VALUES (52, 100, 140, 7, 5, 15, 'Black Beans', 1, 52);
-
-VALUES (53, 50, 30, 1, 0, 8, 'Celery', 2, 53);
-
-VALUES (54, 100, 120, 3, 6, 15, 'Brown Rice', 3, 54);
-
-VALUES (55, 100, 70, 1, 0, 18, 'Cabbage', 2, 55);
-
-VALUES (56, 100, 170, 6, 7, 18, 'Quinoa', 3, 56);
-
-VALUES (57, 150, 250, 15, 11, 15, 'Salmon', 1, 57);
-
-VALUES (58, 50, 70, 3, 3, 8, 'Peas', 2, 58);
-
-VALUES (59, 100, 130, 5, 3, 20, 'Sweet Potato', 1, 59);
-
-VALUES (60, 100, 140, 4, 1, 30, 'Oatmeal', 3, 60);
-
-VALUES (61, 50, 50, 1, 1, 9, 'Cherry Tomatoes', 2, 61);
-
-VALUES (62, 100, 160, 9, 5, 10, 'Tempeh', 1, 62);
-
-VALUES (63, 150, 190, 10, 8, 10, 'Turkey Breast', 1, 63);
-
-VALUES (64, 50, 40, 1, 1, 7, 'Cucumber', 2, 64);
-
-VALUES (65, 100, 90, 3, 3, 16, 'Quorn', 1, 65);
-
-VALUES (66, 100, 150, 8, 5, 15, 'Brown Lentils', 1, 66);
-
-VALUES (67, 150, 120, 4, 1, 23, 'Cauliflower Rice', 2, 67);
-
-VALUES (68, 100, 360, 13, 30, 8, 'Avocado', 1, 68);
-
-VALUES (69, 100, 80, 7, 2, 10, 'Edamame', 1, 69);
-
-VALUES (70, 100, 70, 3, 1, 13, 'Spinach', 2, 70);
-
-VALUES (71, 150, 150, 7, 4, 22, 'Tofu', 1, 71);
-
-VALUES (72, 50, 30, 2, 1, 3, 'Baby Carrots', 2, 72);
-
-VALUES (73, 100, 110, 2, 2, 23, 'Mango', 3, 73);
-
-VALUES (74, 50, 50, 1, 1, 10, 'Radishes', 2, 74);
-
-VALUES (75, 150, 180, 5, 7, 27, 'Black Beans', 1, 75);
-
-VALUES (76, 100, 60, 1, 0, 15, 'Green Beans', 2, 76);
-
-VALUES (77, 150, 200, 14, 9, 10, 'Chicken Leg', 1, 77);
-
-VALUES (78, 50, 20, 1, 0, 4, 'Baby Cucumbers', 2, 78);
-
-VALUES (79, 100, 150, 4, 7, 16, 'Eggplant', 2, 79);
-
-VALUES (80, 100, 90, 2, 1, 21, 'Strawberries', 3, 80);
-
-VALUES (81, 150, 180, 5, 1, 42, 'Potato', 2, 81);
-
-VALUES (82, 50, 60, 1, 3, 7, 'Cherry Tomatoes', 2, 82);
-
-VALUES (83, 100, 130, 6, 3, 20, 'Hummus', 1, 83);
-
-VALUES (84, 150, 150, 2, 2, 34, 'Beets', 2, 84);
-
-VALUES (85, 100, 100, 2, 5, 14, 'Peanuts', 1, 85);
-
-VALUES (86, 150, 200, 8, 5, 28, 'Salmon', 1, 86);
-
-VALUES (87, 50, 50, 2, 2, 6, 'Brussels Sprouts', 2, 87);
-
-VALUES (88, 100, 190, 8, 7, 26, 'Quinoa', 1, 88);
-
-VALUES (89, 100, 150, 6, 8, 12, 'Almonds', 1, 89);
-
-VALUES (90, 150, 120, 4, 1, 23, 'Cauliflower', 2, 90);
-
-VALUES (91, 100, 60, 1, 0, 15, 'Celery', 3, 91);
-
-VALUES (92, 50, 70, 3, 3, 9, 'Edamame', 2, 92);
-
-VALUES (93, 100, 120, 6, 1, 27, 'Green Peas', 2, 93);
-
-VALUES (94, 150, 200, 4, 10, 16, 'Avocado', 1, 94);
-
-VALUES (95, 50, 60, 1, 1, 12, 'Baby Carrots', 2, 95);
-
-VALUES (96, 100, 90, 3, 1, 19, 'Yellow Onion', 3, 96);
-
-VALUES (97, 100, 140, 6, 3, 22, 'Sliced Turkey', 1, 97);
-
-VALUES (98, 150, 150, 1, 1, 36, 'Butternut Squash', 2, 98);
-
-VALUES (99, 50, 60, 2, 3, 4, 'Sliced Cucumber', 3, 99);
-
-VALUES (100, 100, 150, 2, 7, 20, 'Cashews', 1, 100);
 
 -- Create Meals table
 CREATE TABLE Meals
