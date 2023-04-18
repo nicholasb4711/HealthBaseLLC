@@ -48,14 +48,14 @@ CREATE TABLE User
 -- Create MuscleGroup table
 CREATE TABLE MuscleGroup
 (
-    MuscleGroupID   INT PRIMARY KEY,
+    MuscleGroupID   INT PRIMARY KEY AUTO_INCREMENT,
     MuscleGroupName VARCHAR(50) NOT NULL
 );
 
 -- Create FoodCategory table
 CREATE TABLE FoodCategory
 (
-    CategoryID   INT PRIMARY KEY,
+    CategoryID   INT PRIMARY KEY AUTO_INCREMENT,
     CategoryName TEXT NOT NULL,
     CategoryDesc TEXT NOT NULL
 );
@@ -63,7 +63,7 @@ CREATE TABLE FoodCategory
 -- Create Foods table
 CREATE TABLE Foods
 (
-    FoodID           INT PRIMARY KEY,
+    FoodID           INT PRIMARY KEY AUTO_INCREMENT,
     ServingSizeGrams INT  NOT NULL,
     Calories         INT  NOT NULL,
     Protein          INT  NOT NULL,
@@ -78,7 +78,7 @@ CREATE TABLE Foods
 -- Create Meals table
 CREATE TABLE Meals
 (
-    MealID        INT PRIMARY KEY,
+    MealID        INT PRIMARY KEY AUTO_INCREMENT,
     TotalCalories INT      NOT NULL,
     TotalFat      INT      NOT NULL,
     TotalCarb     INT      NOT NULL,
@@ -92,7 +92,7 @@ CREATE TABLE Meals
 
 CREATE TABLE MealFoods
 (
-    MealID INT PRIMARY KEY,
+    MealID INT PRIMARY KEY AUTO_INCREMENT,
     FoodID INT NOT NULL,
     FOREIGN KEY (MealID) REFERENCES Meals (MealID)
         ON UPDATE CASCADE ON DELETE CASCADE,
@@ -104,7 +104,7 @@ CREATE TABLE MealFoods
 -- Create MealPlan table
 CREATE TABLE MealPlan
 (
-    MealPlanID   INT PRIMARY KEY,
+    MealPlanID   INT PRIMARY KEY AUTO_INCREMENT,
     NumWeeks     INT  NOT NULL,
     MealPlanName TEXT NOT NULL,
     CreatorID    INT,
@@ -130,7 +130,7 @@ CREATE TABLE PlanMeals
 -- Create Exercise table
 CREATE TABLE Exercise
 (
-    ExerciseID    INT PRIMARY KEY,
+    ExerciseID    INT PRIMARY KEY AUTO_INCREMENT,
     ExerciseName  TEXT NOT NULL,
     Equipment     TEXT,
     MuscleGroupID INT  NOT NULL,
@@ -141,7 +141,7 @@ CREATE TABLE Exercise
 -- Create ExercisePlan table
 CREATE TABLE ExercisePlan
 (
-    PlanID     INT PRIMARY KEY,
+    PlanID     INT PRIMARY KEY AUTO_INCREMENT,
     CreatorID  INT,
     NumSets    INT NOT NULL,
     NumReps    INT NOT NULL,
@@ -156,7 +156,7 @@ CREATE TABLE ExercisePlan
 -- Create Workouts table
 CREATE TABLE Workout
 (
-    WorkoutID     INT PRIMARY KEY,
+    WorkoutID     INT PRIMARY KEY AUTO_INCREMENT,
     WorkoutName   VARCHAR(50) NOT NULL,
     WorkoutDesc   TEXT        NOT NULL,
     DateCreated   DATETIME    NOT NULL,
@@ -181,7 +181,7 @@ CREATE TABLE WorkoutExercises
 -- Create WorkoutPlan table
 CREATE TABLE WorkoutPlan
 (
-    WorkoutPlanID   INT PRIMARY KEY,
+    WorkoutPlanID   INT PRIMARY KEY AUTO_INCREMENT,
     CreatorID       INT,
     PlanName        VARCHAR(50) NOT NULL,
     PlanDescription TEXT,
@@ -208,7 +208,7 @@ CREATE TABLE PlanWorkouts
 -- Create MealHistory table
 CREATE TABLE MealHistory
 (
-    EntryID     INT PRIMARY KEY,
+    EntryID     INT PRIMARY KEY AUTO_INCREMENT,
     UserID      INT,
     DateOfEntry DATETIME,
     MealID      INT,
@@ -221,7 +221,7 @@ CREATE TABLE MealHistory
 -- Create WorkoutHistory table
 CREATE TABLE WorkoutHistory
 (
-    EntryID     INT PRIMARY KEY,
+    EntryID     INT PRIMARY KEY AUTO_INCREMENT,
     UserID      INT,
     DateOfEntry DATETIME,
     WorkoutID   INT,
