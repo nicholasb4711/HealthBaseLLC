@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "f6a7d157-ef0e-4273-9f94-927e361557cb",
+    "colId": "3766f139-c776-4274-bc05-f7f072c7422d",
+    "containerId": "",
+    "name": "getFoodsCategoriesTest",
+    "url": "localhost:8080/f/categories",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2023-04-18T21:09:03.454Z",
+    "modified": "2023-04-18T21:09:38.222Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]
