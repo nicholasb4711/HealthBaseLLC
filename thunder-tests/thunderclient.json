@@ -26,5 +26,19 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "b5940c38-ff97-4498-9cc3-9029df189680",
+    "colId": "a5d50b16-6374-46e3-95af-ce79af030708",
+    "containerId": "",
+    "name": "getAllWorkoutHistory",
+    "url": "localhost:8001/wh/all-workout-history/",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2023-04-19T21:14:51.288Z",
+    "modified": "2023-04-19T21:22:41.849Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]

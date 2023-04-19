@@ -33,10 +33,12 @@ def create_app():
     #from src.views import views
     #from src.users import users
     from src.foods import foods
+    from src.workout_history import workout_history
 
     # Register the routes that we just imported so they can be properly handled
     #app.register_blueprint(views,       url_prefix='/v')
     #app.register_blueprint(users,   url_prefix='/u')
     app.register_blueprint(foods,    url_prefix='/f')
+    app.register_blueprint(workout_history, url_prefix='/wh')
 
     return app
