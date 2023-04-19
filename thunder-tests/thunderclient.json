@@ -32,11 +32,11 @@
     "colId": "a5d50b16-6374-46e3-95af-ce79af030708",
     "containerId": "",
     "name": "getAllWorkoutHistory",
-    "url": "localhost:8001/wh/all-workout-history/",
+    "url": "localhost:8001/wh/all-workout-history",
     "method": "GET",
     "sortNum": 10000,
     "created": "2023-04-19T21:14:51.288Z",
-    "modified": "2023-04-19T21:22:41.849Z",
+    "modified": "2023-04-19T21:26:08.594Z",
     "headers": [],
     "params": [],
     "tests": []
