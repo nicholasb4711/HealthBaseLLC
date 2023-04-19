@@ -44,7 +44,7 @@ VALUES (1, 'Weight Loss', 'I want to lose weight, and I dont care about muscle r
        (24, 'Functional Fitness', NULL);
 
 
---------------------------------------------------------------
+-- ------------------------------------------------------------
 
 -- Create User table
 CREATE TABLE User
@@ -111,7 +111,7 @@ VALUES (NULL, 'Garcia', 'Miguel', 23, 70, 160, 1),
        (NULL, 'Jones', 'Lee', 28, 71, 195, 20);
 
 
---------------------------------------------------------------
+-- ------------------------------------------------------------
 
 
 -- Create MuscleGroup table
@@ -333,7 +333,7 @@ INSERT INTO Meals (TotalCalories, TotalFat, TotalCarb, TotalProtein, MealName, D
 
 CREATE TABLE MealFoods
 (
-    MealID INT PRIMARY KEY AUTO_INCREMENT,
+    MealID INT NOT NULL,
     FoodID INT NOT NULL,
     FOREIGN KEY (MealID) REFERENCES Meals (MealID)
         ON UPDATE CASCADE ON DELETE CASCADE,
@@ -662,7 +662,7 @@ VALUES ('Leg Day', 'A workout focused on lower body exercises.', '2023-04-19 08:
        ('Powerlifting', 'A workout focused on the three powerlifting exercises: squat, bench press, and deadlift.', '2023-04-19 23:00:00', 2),
        ('Strongman', 'A workout that includes strongman exercises such as tire flips and farmer carries.', '2023-04-20 00:00:00', 3),
        ('Olympic Weightlifting', 'A workout focused on the two Olympic weightlifting exercises: snatch and clean and jerk.', '2023-04-20 01:00:00', 1),
-       ('Plyometrics', 'A workout that includes explosive exercises such as jump squats and box jumps.', '2023-04-20 02:00:00', 14),
+       ('Plyometrics', 'A workout that includes explosive exercises such as jump squats and box jumps.', '2023-04-20 02:00:00', 14);
 
 CREATE TABLE WorkoutExercises
 (
@@ -949,7 +949,7 @@ VALUES (1, '2022-01-01 08:00:00', 1),
        (1, '2022-08-31 12:00:00', 6),
        (2, '2022-08-26 17:30:00', 8),
        (3, '2022-09-01 07:15:00', 10),
-       (4, '2022-08-30 10:30:00', 1),
+       (4, '2022-08-30 10:30:00', 1);
        
 
 -- Create WorkoutHistory table
