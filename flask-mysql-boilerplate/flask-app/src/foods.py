@@ -5,6 +5,10 @@ from src import db
 
 foods = Blueprint('foods', __name__)
 
+@foods.route('/fontenot')
+def get_all_fontenots():
+    return "2 fontenots"
+
 @foods.route('/categories', methods = ['GET'])
 def get_all_categories():
     query = '''
