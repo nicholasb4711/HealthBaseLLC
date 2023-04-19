@@ -20,8 +20,8 @@ def get_customer(userID):
     query = '''
         SELECT *
         FROM WorkoutHistory
-        WHERE UserID = 1
-    '''
+        WHERE UserID = {}
+    '''.format(userID)
     #.format(userID)
     return get_Data(query)
 

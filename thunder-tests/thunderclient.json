@@ -59,12 +59,13 @@
     "colId": "a5d50b16-6374-46e3-95af-ce79af030708",
     "containerId": "",
     "name": "getUserWorkoutHistory",
-    "url": "localhost:8001/wh/users-workout-history/<?userID=1",
+    "url": "localhost:8001/wh/users-workout-history/1",
     "method": "GET",
     "sortNum": 20000,
     "created": "2023-04-19T21:35:17.992Z",
-    "modified": "2023-04-19T21:37:50.372Z",
+    "modified": "2023-04-19T21:57:28.392Z",
     "headers": [],
+<<<<<<< Updated upstream
     "params": [
       {
         "name": "userID",
@@ -97,6 +98,9 @@
     "created": "2023-04-19T21:43:19.236Z",
     "modified": "2023-04-19T21:43:38.316Z",
     "headers": [],
+    "params": [],
+>>>>>>> Stashed changes
+=======
     "params": [],
 >>>>>>> Stashed changes
     "tests": []
