@@ -30,13 +30,13 @@ def create_app():
         return "<h1>Welcome to the 3200 HealthBase app</h1>"
 
     # Import the various routes
-    #from src import views
-    #from src import users
+    from src.views import views
+    from src.users import users
     from src.foods import foods
 
     # Register the routes that we just imported so they can be properly handled
-    #app.register_blueprint(views,       url_prefix='/v')
-    #app.register_blueprint(users,   url_prefix='/u')
+    app.register_blueprint(views,       url_prefix='/v')
+    app.register_blueprint(users,   url_prefix='/u')
     app.register_blueprint(foods,    url_prefix='/f')
 
     return app
