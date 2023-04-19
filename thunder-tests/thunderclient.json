@@ -40,5 +40,25 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "fdf9ef22-38f1-425a-bb1a-9d15321a7ef9",
+    "colId": "a5d50b16-6374-46e3-95af-ce79af030708",
+    "containerId": "",
+    "name": "getUserWorkoutHistory",
+    "url": "localhost:8001/wh/users-workout-history/<?userID=1",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2023-04-19T21:35:17.992Z",
+    "modified": "2023-04-19T21:37:50.372Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "userID",
+        "value": "1",
+        "isPath": false
+      }
+    ],
+    "tests": []
   }
 ]

@@ -26,6 +26,7 @@ def get_customers():
 def get_customer(userID):
     cursor = db.get_db().cursor()
     cursor.execute('select * from customers where id = {0}'.format(userID))
+    
     row_headers = [x[0] for x in cursor.description]
     json_data = []
     theData = cursor.fetchall()
