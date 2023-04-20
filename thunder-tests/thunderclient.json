@@ -74,11 +74,11 @@
     "colId": "a5d50b16-6374-46e3-95af-ce79af030708",
     "containerId": "",
     "name": "getUserWorkoutHistory",
-    "url": "localhost:8001/wh/users-workout-history/1",
+    "url": "localhost:8001/wh/users-workout-history/1?userID=1",
     "method": "GET",
     "sortNum": 20000,
     "created": "2023-04-19T21:35:17.992Z",
-    "modified": "2023-04-19T21:57:28.392Z",
+    "modified": "2023-04-20T20:53:18.666Z",
     "headers": [],
     "params": [
       {
@@ -113,6 +113,20 @@
     "sortNum": 40000,
     "created": "2023-04-20T20:23:38.758Z",
     "modified": "2023-04-20T20:23:51.454Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "fb849274-9ab1-4328-bb51-91f1b6892e41",
+    "colId": "dfd067ea-f7e1-4b1f-be11-4aed7e557148",
+    "containerId": "",
+    "name": "viewExercisesByMuscleGroup",
+    "url": "localhost:8001/e/viewExercises/5",
+    "method": "GET",
+    "sortNum": 60000,
+    "created": "2023-04-20T20:32:02.100Z",
+    "modified": "2023-04-20T20:58:10.931Z",
     "headers": [],
     "params": [],
     "tests": []

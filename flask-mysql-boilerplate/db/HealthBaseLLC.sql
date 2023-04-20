@@ -122,20 +122,20 @@ CREATE TABLE MuscleGroup
 );
 
 -- Fill MuscleGroup with data
-INSERT INTO MuscleGroup(MuscleGroupName)
-VALUES ('Quadriceps'), 
-       ('Glutes'), 
-       ('Hamstrings'), 
-       ('Chest Muscles'), 
-       ('Back Muscles'), 
-       ('Abdominals'), 
-       ('Biceps'),
-       ('Triceps'),
-       ('Calves'),
-       ('Traps'),
-       ('Forearms'),
-       ('Rear Deltoid'),
-       ('Front Deltoid');
+INSERT INTO MuscleGroup(MuscleGroupID, MuscleGroupName)
+VALUES (1, 'Quadriceps'),
+       (2, 'Glutes'),
+       (3, 'Hamstrings'),
+       (4, 'Chest Muscles'),
+       (5, 'Back Muscles'),
+       (6,'Abdominals'),
+       (7, 'Biceps'),
+       (8, 'Triceps'),
+       (9, 'Calves'),
+       (10, 'Traps'),
+       (11, 'Forearms'),
+       (12, 'Rear Deltoid'),
+       (13, 'Front Deltoid');
 
 
 -- Create FoodCategory table

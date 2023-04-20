@@ -8,18 +8,19 @@ exercises = Blueprint('exercises', __name__)
 @exercises.route('/viewMuscleGroups', methods = ['GET'])
 def get_MuscleGroups():
     query = '''
-        SELECT MuscleGroupName
+        SELECT MuscleGroupID, MuscleGroupName
         FROM MuscleGroup
     '''
-    return get_data(query)
+    return get_Data(query)
 
 # Get method for viewing all exercises related to a specific musclegroup
-@exercises.route('/viewExercises', methods=['GET'])
-def get_allWorkoutHistory():
+@exercises.route('/viewExercises/<MuscleGroupID>', methods=['GET'])
+def get_ExercisesByMuscleGroup(MuscleGroupID):
     query = '''
-        SELECT EntryID, UserID, DateOfEntry, WorkoutID
-        FROM WorkoutHistory
-    '''
+        SELECT ExerciseName
+        FROM Exercise
+        WHERE MuscleGroupID = {}
+    '''.format(MuscleGroupID)
     return get_Data(query)
 
 # general function for retrieving data
