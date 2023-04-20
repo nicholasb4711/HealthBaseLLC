@@ -28,20 +28,6 @@
     "tests": []
   },
   {
-    "_id": "b5940c38-ff97-4498-9cc3-9029df189680",
-    "colId": "dfd067ea-f7e1-4b1f-be11-4aed7e557148",
-    "containerId": "",
-    "name": "getAllWorkoutHistory",
-    "url": "localhost:8001/tw/all-workout-history",
-    "method": "GET",
-    "sortNum": 20000,
-    "created": "2023-04-19T21:14:51.288Z",
-    "modified": "2023-04-20T21:14:24.937Z",
-    "headers": [],
-    "params": [],
-    "tests": []
-  },
-  {
     "_id": "42174a9d-7eda-4143-af45-10f6db231855",
     "colId": "3766f139-c776-4274-bc05-f7f072c7422d",
     "containerId": "",
@@ -292,5 +278,32 @@
       }
     ],
     "tests": []
+  },
+  {
+    "_id": "7abb2259-355c-4106-83ff-27ce5d1a1dc1",
+    "colId": "dfd067ea-f7e1-4b1f-be11-4aed7e557148",
+    "containerId": "",
+    "name": "getAllWorkoutHistory",
+    "url": "localhost:8001/tw/all-workout-history",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2023-04-20T23:49:45.210Z",
+    "modified": "2023-04-20T23:52:06.116Z",
+    "headers": [],
+    "params": [],
+    "tests": [
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "isjson",
+        "value": ""
+      },
+      {
+        "type": "Content-Length",
+        "custom": "",
+        "action": ">",
+        "value": "20"
+      }
+    ]
   }
 ]
