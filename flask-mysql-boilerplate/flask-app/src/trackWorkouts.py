@@ -4,6 +4,7 @@ from src import db
 
 trackWorkouts = Blueprint('track workouts', __name__)
 
+# get method for viewing all the muscle groups in the db
 @trackWorkouts.route('/viewMuscleGroups', methods = ['GET'])
 def get_MuscleGroups():
     query = '''
@@ -12,7 +13,7 @@ def get_MuscleGroups():
     '''
     return get_Data(query)
 
-# Get method for viewing all exercises related to a specific musclegroup
+# get method for viewing all exercises related to a specific musclegroup
 @trackWorkouts.route('/viewExercises/<MuscleGroupID>', methods=['GET'])
 def get_ExercisesByMuscleGroup(MuscleGroupID):
     query = '''
@@ -22,7 +23,7 @@ def get_ExercisesByMuscleGroup(MuscleGroupID):
     '''.format(MuscleGroupID)
     return get_Data(query)
 
-# Get all workout history from the db
+# get all workout history from the db
 @trackWorkouts.route('/all-workout-history', methods=['GET'])
 def get_allWorkoutHistory():
     query = '''
@@ -31,7 +32,7 @@ def get_allWorkoutHistory():
     '''
     return get_Data(query)
 
-# Get customer detail for customer with particular userID
+# get method for retrieving a user's workout history
 @trackWorkouts.route('/users-workout-history/<userID>', methods=['GET'])
 def get_customer(userID):
     query = '''
@@ -46,7 +47,7 @@ def get_customer(userID):
     #.format(userID)
     return get_Data(query)
 
-# Create an exercise plan
+# post method for creating an exercise plan
 @trackWorkouts.route('/addExercisePlan', methods = ['POST'])
 def add_ExercisePlan():
     req_data = request.get_json()
@@ -61,7 +62,7 @@ def add_ExercisePlan():
 
     return post_Data(insert_stmt)
 
-# Add an exercise plan to a workout
+# post method for adding an exercise plan to a workout
 @trackWorkouts.route('/addExercisePlanToWorkout', methods = ['POST'])
 def add_ExercisePlanToWorkout():
     req_data = request.get_json()
@@ -73,7 +74,7 @@ def add_ExercisePlanToWorkout():
 
     return post_Data(insert_stmt)
 
-# Create a new workout
+# post method for creating a new workout
 @trackWorkouts.route('/newWorkout', methods = ['POST'])
 def new_Workout():
     req_data = request.get_json()
@@ -87,12 +88,7 @@ def new_Workout():
 
     return post_Data(insert_stmt)
 
-#@trackWorkouts.route('/editExercisePlan', methods = ['PUT'])
-#def edit_ExercisePlan():
-    
-
-
-# Log a workout in WorkoutHistory
+# post method for logging a workout in user's workout history
 @trackWorkouts.route('/logWorkout', methods = ['POST'])
 def log_Workout():
     req_data = request.get_json()
@@ -104,6 +100,8 @@ def log_Workout():
     insert_stmt += str(UserID) + ', "' + Date + '", ' + str(WorkoutID) + ')'
     return post_Data(insert_stmt)
 
+#@trackWorkouts.route('/editExercisePlan', methods = ['PUT'])
+#def edit_ExercisePlan():
 
 # general function for retrieving data
 def get_Data(query):
