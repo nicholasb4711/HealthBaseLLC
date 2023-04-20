@@ -56,8 +56,6 @@ def get_highestProteinFoods():
     '''
     return getData(query)
 
-
-
 # general method for retrieving data 
 def getData(query):
     cursor = db.get_db().cursor()

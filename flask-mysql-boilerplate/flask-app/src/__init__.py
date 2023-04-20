@@ -32,13 +32,13 @@ def create_app():
     # Import the various routes
     #from src.views import views
     #from src.users import users
-    from src.foods import foods
+    from src.trackMeals import trackMeals
     from src.trackWorkouts import trackWorkouts
 
     # Register the routes that we just imported so they can be properly handled
     #app.register_blueprint(views,       url_prefix='/v')
     #app.register_blueprint(users,   url_prefix='/u')
-    app.register_blueprint(foods,    url_prefix='/f')
+    app.register_blueprint(trackMeals,    url_prefix='/tm')
     app.register_blueprint(trackWorkouts, url_prefix='/tw')
 
     return app
