@@ -18,8 +18,10 @@ def get_allWorkoutHistory():
 @workout_history.route('/users-workout-history/<userID>', methods=['GET'])
 def get_customer(userID):
     query = '''
-        SELECT *
-        FROM WorkoutHistory
+        SELECT DateOfEntry as "Date",
+               WorkoutName as "Workout",
+               WorkoutDesc as "Description"
+        FROM WorkoutHistory JOIN Workout ON WorkoutID
         WHERE UserID = {}
     '''.format(userID)
     #.format(userID)
