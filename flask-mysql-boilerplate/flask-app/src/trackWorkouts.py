@@ -89,10 +89,7 @@ def add_ExercisePlanToWorkout():
 
 @trackWorkouts.route('/newWorkout', methods = ['POST'])
 def new_Workout():
-    current_app.logger.info('Processing form data')
     req_data = request.get_json()
-    current_app.logger.info(req_data)
-
     WorkoutName = req_data['WorkoutName']
     WorkoutDesc = req_data['WorkoutDesc']
     DateCreated = req_data['DateCreated']
@@ -101,40 +98,24 @@ def new_Workout():
     insert_stmt = 'INSERT INTO Workout (WorkoutName, WorkoutDesc, DateCreated, CreatorID) VALUES ("'
     insert_stmt += WorkoutName+ '", "' + WorkoutDesc + '", "' + DateCreated + '", ' + str(CreatorID) + ')'
 
-    current_app.logger.info(insert_stmt)
+    return post_Data(insert_stmt)
 
-    cursor = db.get_db().cursor()
-    cursor.execute(insert_stmt)
-    db.get_db().commit()
-    return "Success"
-
-@trackWorkouts.route('/editExercisePlan', methods = ['PUT'])
-def edit_ExercisePlan():
-    return "Success"
-
-
+#@trackWorkouts.route('/editExercisePlan', methods = ['PUT'])
+#def edit_ExercisePlan():
     
+
 
 
 @trackWorkouts.route('/logWorkout', methods = ['POST'])
 def log_Workout():
-    current_app.logger.info('Processing form data')
     req_data = request.get_json()
-    current_app.logger.info(req_data)
-
     UserID = req_data['UserID']
     WorkoutID = req_data['WorkoutID']
     Date = req_data['Date']
 
     insert_stmt = 'INSERT INTO WorkoutHistory (UserID, DateOfEntry, WorkoutID) VALUES ('
     insert_stmt += str(UserID) + ', "' + Date + '", ' + str(WorkoutID) + ')'
-
-    current_app.logger.info(insert_stmt)
-
-    cursor = db.get_db().cursor()
-    cursor.execute(insert_stmt)
-    db.get_db().commit()
-    return "Success"
+    return post_Data(insert_stmt)
 
 
 # general function for retrieving data
@@ -151,3 +132,10 @@ def get_Data(query):
         json_data.append(dict(zip(column_headers, row)))
 
     return jsonify(json_data)
+
+def post_Data(statement):
+    current_app.logger.info(statement)
+    cursor = db.get_db().cursor()
+    cursor.execute(statement)
+    db.get_db().commit()
+    return "Success"
