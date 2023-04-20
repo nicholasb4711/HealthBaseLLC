@@ -11,7 +11,7 @@ def get_MuscleGroups():
         SELECT MuscleGroupID, MuscleGroupName
         FROM MuscleGroup
     '''
-    return get_Data(query)
+    return get_data(query)
 
 # get method for viewing all exercises related to a specific musclegroup
 @trackWorkouts.route('/viewExercises/<MuscleGroupID>', methods=['GET'])
@@ -21,7 +21,7 @@ def get_ExercisesByMuscleGroup(MuscleGroupID):
         FROM Exercise
         WHERE MuscleGroupID = {}
     '''.format(MuscleGroupID)
-    return get_Data(query)
+    return get_data(query)
 
 # get all workout history from the db
 @trackWorkouts.route('/all-workout-history', methods=['GET'])
@@ -30,7 +30,7 @@ def get_allWorkoutHistory():
         SELECT EntryID, UserID, DateOfEntry, WorkoutID
         FROM WorkoutHistory
     '''
-    return get_Data(query)
+    return get_data(query)
 
 # get method for retrieving a user's workout history
 @trackWorkouts.route('/users-workout-history/<userID>', methods=['GET'])
@@ -45,7 +45,7 @@ def get_customer(userID):
         WHERE UserID = {}
     '''.format(userID)
     #.format(userID)
-    return get_Data(query)
+    return get_data(query)
 
 # post method for creating an exercise plan
 @trackWorkouts.route('/addExercisePlan', methods = ['POST'])
@@ -60,7 +60,7 @@ def add_ExercisePlan():
     insert_stmt = 'INSERT INTO ExercisePlan (CreatorID, NumSets, NumReps, WeightLbs, ExerciseID) VALUES ('
     insert_stmt += str(CreatorID) + ', ' + str(NumSets) + ', ' + str(NumReps) + ', ' + str(Weight) + ', ' + str(ExerciseID) + ')'
 
-    return post_Data(insert_stmt)
+    return run_sql_stmt(insert_stmt)
 
 # post method for adding an exercise plan to a workout
 @trackWorkouts.route('/addExercisePlanToWorkout', methods = ['POST'])
@@ -72,7 +72,7 @@ def add_ExercisePlanToWorkout():
     insert_stmt = 'INSERT INTO WorkoutExercises (WorkoutID, ExercisePlanID) VALUES ('
     insert_stmt += str(WorkoutID) + ', ' + str(ExercisePlanID) + ')'
 
-    return post_Data(insert_stmt)
+    return run_sql_stmt(insert_stmt)
 
 # post method for creating a new workout
 @trackWorkouts.route('/newWorkout', methods = ['POST'])
@@ -86,7 +86,7 @@ def new_Workout():
     insert_stmt = 'INSERT INTO Workout (WorkoutName, WorkoutDesc, DateCreated, CreatorID) VALUES ("'
     insert_stmt += WorkoutName+ '", "' + WorkoutDesc + '", "' + DateCreated + '", ' + str(CreatorID) + ')'
 
-    return post_Data(insert_stmt)
+    return run_sql_stmt(insert_stmt)
 
 # post method for logging a workout in user's workout history
 @trackWorkouts.route('/logWorkout', methods = ['POST'])
@@ -98,13 +98,24 @@ def log_Workout():
 
     insert_stmt = 'INSERT INTO WorkoutHistory (UserID, DateOfEntry, WorkoutID) VALUES ('
     insert_stmt += str(UserID) + ', "' + Date + '", ' + str(WorkoutID) + ')'
-    return post_Data(insert_stmt)
+    return run_sql_stmt(insert_stmt)
 
-#@trackWorkouts.route('/editExercisePlan', methods = ['PUT'])
-#def edit_ExercisePlan():
+@trackWorkouts.route('/editExercisePlan', methods = ['PUT'])
+def edit_ExercisePlan():
+    req_data = request.get_json()
+    PlanID = req_data['PlanID']
+    NumSets = req_data['NumSets']
+    NumReps = req_data['NumReps']
+    Weight = req_data['Weight']
+    ExerciseID = req_data['ExerciseID']
+
+    update_stmt = 'UPDATE ExercisePlan SET NumSets = ' + str(NumSets) + ', NumReps = ' + str(NumReps) + ', WeightLbs = ' + str(Weight) + ', ExerciseID = ' + str(ExerciseID)
+    update_stmt += ' WHERE PlanID = ' + str(PlanID)
+    
+    return run_sql_stmt(update_stmt)
 
 # general function for retrieving data
-def get_Data(query):
+def get_data(query):
     cursor = db.get_db().cursor()
     cursor.execute(query)
     json_data = []
@@ -119,7 +130,7 @@ def get_Data(query):
     return jsonify(json_data)
 
 # general function for executing a MySQL insert statement
-def post_Data(statement):
+def run_sql_stmt(statement):
     current_app.logger.info(statement)
     cursor = db.get_db().cursor()
     cursor.execute(statement)

@@ -206,5 +206,24 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "26b57197-a20e-48d2-83e5-69bd9d346c7d",
+    "colId": "dfd067ea-f7e1-4b1f-be11-4aed7e557148",
+    "containerId": "",
+    "name": "editExercisePlan",
+    "url": "localhost:8001/tw/editExercisePlan",
+    "method": "PUT",
+    "sortNum": 110000,
+    "created": "2023-04-20T22:48:13.511Z",
+    "modified": "2023-04-20T22:49:38.234Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"PlanID\" : 3,\n  \"NumSets\" : 4,\n  \"NumReps\" : 10,\n  \"Weight\" : 100,\n  \"ExerciseID\" : 4\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
