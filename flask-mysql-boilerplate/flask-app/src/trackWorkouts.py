@@ -1,7 +1,6 @@
-from flask import Blueprint, request, jsonify, make_response
+from flask import Blueprint, current_app, request, jsonify, make_response
 import json
 from src import db
-
 
 trackWorkouts = Blueprint('track workouts', __name__)
 
@@ -46,6 +45,27 @@ def get_customer(userID):
     '''.format(userID)
     #.format(userID)
     return get_Data(query)
+
+@trackWorkouts.route('/logWorkout', methods = ['POST'])
+def log_Workout():
+    current_app.logger.info('Processing form data')
+    req_data = request.get_json()
+    current_app.logger.info(req_data)
+
+    UserID = req_data['UserID']
+    WorkoutID = req_data['WorkoutID']
+    Date = req_data['Date']
+
+    insert_stmt = 'INSERT INTO WorkoutHistory (UserID, DateOfEntry, WorkoutID) VALUES ('
+    insert_stmt += str(UserID) + ', "' + Date + '", ' + str(WorkoutID) + ')'
+
+    current_app.logger.info(insert_stmt)
+
+    cursor = db.get_db().cursor()
+    cursor.execute(insert_stmt)
+    db.get_db().commit()
+    return "Success"
+
 
 # general function for retrieving data
 def get_Data(query):

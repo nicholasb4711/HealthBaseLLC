@@ -130,5 +130,24 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "ea461359-84ab-43e5-b491-40de35a21783",
+    "colId": "dfd067ea-f7e1-4b1f-be11-4aed7e557148",
+    "containerId": "",
+    "name": "logWorkout",
+    "url": "localhost:8001/tw/logWorkout",
+    "method": "POST",
+    "sortNum": 70000,
+    "created": "2023-04-20T21:33:25.867Z",
+    "modified": "2023-04-20T21:36:13.721Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"UserID\" : 4,\n  \"WorkoutID\" : 3,\n  \"Date\" : \"2022-03-01 08:00:00\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
