@@ -28,7 +28,6 @@
     "tests": []
   },
   {
-<<<<<<< Updated upstream
     "_id": "b5940c38-ff97-4498-9cc3-9029df189680",
     "colId": "a5d50b16-6374-46e3-95af-ce79af030708",
     "containerId": "",
@@ -38,7 +37,6 @@
     "sortNum": 10000,
     "created": "2023-04-19T21:14:51.288Z",
     "modified": "2023-04-19T21:26:08.594Z",
-=======
     "_id": "42174a9d-7eda-4143-af45-10f6db231855",
     "colId": "3766f139-c776-4274-bc05-f7f072c7422d",
     "containerId": "",
@@ -48,13 +46,11 @@
     "sortNum": 30000,
     "created": "2023-04-19T21:19:58.728Z",
     "modified": "2023-04-19T21:20:24.680Z",
->>>>>>> Stashed changes
     "headers": [],
     "params": [],
     "tests": []
   },
   {
-<<<<<<< Updated upstream
     "_id": "fdf9ef22-38f1-425a-bb1a-9d15321a7ef9",
     "colId": "a5d50b16-6374-46e3-95af-ce79af030708",
     "containerId": "",
@@ -65,7 +61,6 @@
     "created": "2023-04-19T21:35:17.992Z",
     "modified": "2023-04-19T21:57:28.392Z",
     "headers": [],
-<<<<<<< Updated upstream
     "params": [
       {
         "name": "userID",
@@ -73,7 +68,9 @@
         "isPath": false
       }
     ],
-=======
+    "tests": []
+  },
+  {
     "_id": "bf4d012b-893e-460e-9833-cdbaf00d4bb0",
     "colId": "3766f139-c776-4274-bc05-f7f072c7422d",
     "containerId": "",
@@ -99,10 +96,6 @@
     "modified": "2023-04-19T21:43:38.316Z",
     "headers": [],
     "params": [],
->>>>>>> Stashed changes
-=======
-    "params": [],
->>>>>>> Stashed changes
     "tests": []
   }
 ]
