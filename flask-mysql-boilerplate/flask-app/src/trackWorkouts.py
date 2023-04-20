@@ -76,8 +76,8 @@ def get_customer(userID):
 def get_WorkoutExercises(WorkoutID):
     query = '''
         SELECT ex.ExerciseName, e.NumSets, e.NumReps, e.WeightLbs
-        FROM Workout W JOIN WorkoutExercises we ON w.WorkoutID = we.WorkoutID
-                       JOIN ExercisePlan e ON we.ExercisePlanID = e.ExercisePlanID
+        FROM Workout w JOIN WorkoutExercises we ON w.WorkoutID = we.WorkoutID
+                       JOIN ExercisePlan e ON we.ExercisePlanID = e.PlanID
                        JOIN Exercise ex ON e.ExerciseID = ex.ExerciseID
         WHERE we.WorkoutID = {}
     '''.format(WorkoutID)

@@ -264,11 +264,11 @@
     "colId": "dfd067ea-f7e1-4b1f-be11-4aed7e557148",
     "containerId": "",
     "name": "getWorkoutExercises",
-    "url": "localhost:8001/tw//getWorkoutExercises/5",
+    "url": "localhost:8001/tw//getWorkoutExercises/15",
     "method": "GET",
     "sortNum": 140000,
     "created": "2023-04-20T23:21:40.935Z",
-    "modified": "2023-04-20T23:30:18.428Z",
+    "modified": "2023-04-20T23:34:29.015Z",
     "headers": [],
     "params": [],
     "tests": []
