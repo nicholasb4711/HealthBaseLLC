@@ -26,5 +26,24 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "e719dbb7-2969-42d5-ae2c-8842a8ecff8c",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:8001/f/addFood",
+    "url": "localhost:8001/f/addFood",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-04-20T21:07:20.898Z",
+    "modified": "2023-04-20T21:07:20.898Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"food_name\": \"FairLife Core Power\",\n  \"food_calories\": 170,\n  \"food_servingsize\": 50,\n  \"food_protein\": 26,\n  \"food_fat\": 5,\n  \"food_carbs\": 10,\n  \"food_category\": 4\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
