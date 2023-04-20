@@ -21,7 +21,7 @@ def get_customer(userID):
         SELECT DateOfEntry as "Date",
                WorkoutName as "Workout",
                WorkoutDesc as "Description"
-        FROM WorkoutHistory JOIN Workout ON WorkoutID
+        FROM WorkoutHistory wh JOIN Workout w ON wh.WorkoutID = w.WorkoutID
         WHERE UserID = {}
     '''.format(userID)
     #.format(userID)
