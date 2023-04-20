@@ -16,7 +16,7 @@ def get_MuscleGroups():
 @trackWorkouts.route('/viewExercises/<MuscleGroupID>', methods=['GET'])
 def get_ExercisesByMuscleGroup(MuscleGroupID):
     query = '''
-        SELECT ExerciseName
+        SELECT ExerciseID, ExerciseName
         FROM Exercise
         WHERE MuscleGroupID = {}
     '''.format(MuscleGroupID)
@@ -86,6 +86,33 @@ def add_ExercisePlanToWorkout():
     cursor.execute(insert_stmt)
     db.get_db().commit()
     return "Success"
+
+@trackWorkouts.route('/newWorkout', methods = ['POST'])
+def new_Workout():
+    current_app.logger.info('Processing form data')
+    req_data = request.get_json()
+    current_app.logger.info(req_data)
+
+    WorkoutName = req_data['WorkoutName']
+    WorkoutDesc = req_data['WorkoutDesc']
+    DateCreated = req_data['DateCreated']
+    CreatorID = req_data['CreatorID']
+
+    insert_stmt = 'INSERT INTO Workout (WorkoutName, WorkoutDesc, DateCreated, CreatorID) VALUES ("'
+    insert_stmt += WorkoutName+ '", "' + WorkoutDesc + '", "' + DateCreated + '", ' + str(CreatorID) + ')'
+
+    current_app.logger.info(insert_stmt)
+
+    cursor = db.get_db().cursor()
+    cursor.execute(insert_stmt)
+    db.get_db().commit()
+    return "Success"
+
+@trackWorkouts.route('/editExercisePlan', methods = ['PUT'])
+def edit_ExercisePlan():
+    return "Success"
+
+
     
 
 
