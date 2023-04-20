@@ -72,13 +72,14 @@ def get_customer(userID):
     '''.format(userID)
     return get_data(query)
 
-@trackWorkouts.route('/getWorkoutExercises/<WorkoutID', methods = ['GET'])
+@trackWorkouts.route('/getWorkoutExercises/<WorkoutID>', methods = ['GET'])
 def get_WorkoutExercises(WorkoutID):
     query = '''
-        SELECT e.ExerciseName, e.NumSets, e.NumReps, e.Weight
-        FROM Workout W JOIN WorkoutExercises WE ON w.WorkoutID = we.WorkoutID
+        SELECT ex.ExerciseName, e.NumSets, e.NumReps, e.WeightLbs
+        FROM Workout W JOIN WorkoutExercises we ON w.WorkoutID = we.WorkoutID
                        JOIN ExercisePlan e ON we.ExercisePlanID = e.ExercisePlanID
-        WHERE WorkoutID = {}
+                       JOIN Exercise ex ON e.ExerciseID = ex.ExerciseID
+        WHERE we.WorkoutID = {}
     '''.format(WorkoutID)
     return get_data(query)
     
