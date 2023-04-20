@@ -3,10 +3,18 @@ import json
 from src import db
 
 
-workout_history = Blueprint('workout history', __name__)
+exercises = Blueprint('exercises', __name__)
 
-# Get all workout history from the db
-@workout_history.route('/all-workout-history', methods=['GET'])
+@exercises.route('/viewMuscleGroups', methods = ['GET'])
+def get_MuscleGroups():
+    query = '''
+        SELECT MuscleGroupName
+        FROM MuscleGroup
+    '''
+    return get_data(query)
+
+# Get method for viewing all exercises related to a specific musclegroup
+@exercises.route('/viewExercises', methods=['GET'])
 def get_allWorkoutHistory():
     query = '''
         SELECT EntryID, UserID, DateOfEntry, WorkoutID
