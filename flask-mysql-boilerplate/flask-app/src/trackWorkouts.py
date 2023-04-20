@@ -4,6 +4,15 @@ from src import db
 
 trackWorkouts = Blueprint('track workouts', __name__)
 
+# get method for viewing all the Goals in the db
+@trackWorkouts.route('/viewAllGoals', methods = ['GET'])
+def view_allGoals():
+    query = '''
+        SELECT GoalName, GoalDesc
+        FROM Goals
+    '''
+    return get_data(query)
+
 # post method for creating a new user
 @trackWorkouts.route('/newUser', methods = ['POST'])
 def new_user():
