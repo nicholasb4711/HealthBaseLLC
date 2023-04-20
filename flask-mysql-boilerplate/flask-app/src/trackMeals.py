@@ -2,10 +2,9 @@ from flask import Blueprint, request, jsonify, make_response
 import json
 from src import db
 
+trackMeals = Blueprint('trackMeals', __name__)
 
-foods = Blueprint('foods', __name__)
-
-@foods.route('/categories', methods = ['GET'])
+@trackMeals.route('/categories', methods = ['GET'])
 def get_all_categories():
     query = '''
         SELECT DISTINCT category AS label, category as value
@@ -16,7 +15,7 @@ def get_all_categories():
     return getData(query)
 
 # Get all the foods from the database
-@foods.route('/foods', methods=['GET'])
+@trackMeals.route('/foods', methods=['GET'])
 def get_foods():
     query = '''
         SELECT FoodID, ServingSizeGrams, FoodName FROM Foods
@@ -24,7 +23,7 @@ def get_foods():
     return getData(query)
 
 # get the top 10 lowest calorie from the database
-@foods.route('/top10lowestCalorie', methods=['GET'])
+@trackMeals.route('/top10lowestCalorie', methods=['GET'])
 def get_lowestCalorieFoods():
     query = '''
         SELECT FoodName, Calories
@@ -35,7 +34,7 @@ def get_lowestCalorieFoods():
     return getData(query)
 
 # get the top 10 lowest calorie from the database
-@foods.route('/top10highestCalorie', methods=['GET'])
+@trackMeals.route('/top10highestCalorie', methods=['GET'])
 def get_highestCalorieFoods():
     query = '''
         SELECT FoodName, Calories
@@ -46,7 +45,7 @@ def get_highestCalorieFoods():
     return getData(query)
 
 # get the top 10 lowest calorie from the database
-@foods.route('/highestProtein', methods=['GET'])
+@trackMeals.route('/highestProtein', methods=['GET'])
 def get_highestProteinFoods():
     query = '''
         SELECT FoodName, Protein
