@@ -4,6 +4,23 @@ from src import db
 
 trackWorkouts = Blueprint('track workouts', __name__)
 
+# post method for creating a new user
+@trackWorkouts.route('/newUser', methods = ['POST'])
+def new_user():
+    req_data = request.get_json()
+    LastName = req_data['LastName']
+    FirstName = req_data['FirstName']
+    Age = req_data['Age']
+    Height = req_data['Height']
+    Weight = req_data['Weight']
+    GoalID = req_data['GoalID']
+
+    insert_stmt = 'INSERT INTO User (LastName, FirstName, Age, Height_in, Weight_lbs, Goal) VALUES ("'
+    insert_stmt += LastName + '", "' + FirstName + '", ' + str(Age) + ', ' + str(Height) + ', ' + str(Weight) + ', ' + str(GoalID) + ')'
+
+    return run_sql_stmt(insert_stmt)
+
+
 # get method for viewing all the muscle groups in the db
 @trackWorkouts.route('/viewMuscleGroups', methods = ['GET'])
 def get_MuscleGroups():
@@ -113,6 +130,10 @@ def edit_ExercisePlan():
     update_stmt += ' WHERE PlanID = ' + str(PlanID)
     
     return run_sql_stmt(update_stmt)
+
+#@trackWorkouts.route('/deleteExercisePlan', methods = ['DELETE'])
+#def delete_ExercisePlan():
+
 
 # general function for retrieving data
 def get_data(query):
