@@ -22,21 +22,6 @@ def get_allWorkoutHistory():
     '''
     return get_Data(query)
 
-# Get customer detail for customer with particular userID
-@workout_history.route('/users-workout-history/<userID>', methods=['GET'])
-def get_customer(userID):
-    query = '''
-        SELECT DateOfEntry as "Date",
-               WorkoutName as "Workout",
-               WorkoutDesc as "Description"
-
-        FROM WorkoutHistory wh JOIN Workout w ON wh.WorkoutID = w.WorkoutID
-                               JOIN WorkoutExercises we ON wh.WorkoutID = we.WorkoutID
-        WHERE UserID = {}
-    '''.format(userID)
-    #.format(userID)
-    return get_Data(query)
-
 # general function for retrieving data
 def get_Data(query):
     cursor = db.get_db().cursor()
