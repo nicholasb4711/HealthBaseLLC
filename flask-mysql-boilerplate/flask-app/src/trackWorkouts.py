@@ -46,6 +46,49 @@ def get_customer(userID):
     #.format(userID)
     return get_Data(query)
 
+@trackWorkouts.route('/addExercisePlan', methods = ['POST'])
+def add_ExercisePlan():
+    current_app.logger.info('Processing form data')
+    req_data = request.get_json()
+    current_app.logger.info(req_data)
+
+    CreatorID = req_data['CreatorID']
+    NumSets = req_data['NumSets']
+    NumReps = req_data['NumReps']
+    Weight = req_data['Weight']
+    ExerciseID = req_data['ExerciseID']
+
+    insert_stmt = 'INSERT INTO ExercisePlan (CreatorID, NumSets, NumReps, WeightLbs, ExerciseID) VALUES ('
+    insert_stmt += str(CreatorID) + ', ' + str(NumSets) + ', ' + str(NumReps) + ', ' + str(Weight) + ', ' + str(ExerciseID) + ')'
+
+    current_app.logger.info(insert_stmt)
+
+    cursor = db.get_db().cursor()
+    cursor.execute(insert_stmt)
+    db.get_db().commit()
+    return "Success"
+
+@trackWorkouts.route('/addExercisePlanToWorkout', methods = ['POST'])
+def add_ExercisePlanToWorkout():
+    current_app.logger.info('Processing form data')
+    req_data = request.get_json()
+    current_app.logger.info(req_data)
+
+    WorkoutID = req_data['WorkoutID']
+    ExercisePlanID = req_data['ExercisePlanID']
+
+    insert_stmt = 'INSERT INTO WorkoutExercises (WorkoutID, ExercisePlanID) VALUES ('
+    insert_stmt += str(WorkoutID) + ', ' + str(ExercisePlanID) + ')'
+
+    current_app.logger.info(insert_stmt)
+
+    cursor = db.get_db().cursor()
+    cursor.execute(insert_stmt)
+    db.get_db().commit()
+    return "Success"
+    
+
+
 @trackWorkouts.route('/logWorkout', methods = ['POST'])
 def log_Workout():
     current_app.logger.info('Processing form data')

@@ -667,16 +667,15 @@ VALUES ('Leg Day', 'A workout focused on lower body exercises.', '2023-04-19 08:
 CREATE TABLE WorkoutExercises
 (
     WorkoutID  INT,
-    ExerciseID INT,
-    PRIMARY KEY (WorkoutID, ExerciseID),
+    ExercisePlanID INT,
+    PRIMARY KEY (WorkoutID, ExercisePlanID),
     FOREIGN KEY (WorkoutID) REFERENCES Workout (WorkoutID)
         ON UPDATE CASCADE ON DELETE CASCADE,
-    FOREIGN KEY (ExerciseID) REFERENCES Exercise (ExerciseID)
+    FOREIGN KEY (ExercisePlanID) REFERENCES ExercisePlan (PlanID)
         ON UPDATE CASCADE ON DELETE CASCADE
-
 );
 
-INSERT INTO WorkoutExercises (WorkoutID, ExerciseID)
+INSERT INTO WorkoutExercises (WorkoutID, ExercisePlanID)
 VALUES (1, 1),
 (1, 3),
 (1, 5),

@@ -149,5 +149,43 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "e72499bf-6e23-4aed-a098-e4d1740ab622",
+    "colId": "dfd067ea-f7e1-4b1f-be11-4aed7e557148",
+    "containerId": "",
+    "name": "addExercisePlan",
+    "url": "localhost:8001/tw/addExercisePlan",
+    "method": "POST",
+    "sortNum": 80000,
+    "created": "2023-04-20T21:45:05.070Z",
+    "modified": "2023-04-20T21:46:12.943Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"CreatorID\" : 4,\n  \"NumSets\" : 3,\n  \"NumReps\" : 8,\n  \"Weight\" : 225,\n  \"ExerciseID\" : 1\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "25418efb-7707-4ec8-9a1d-9b8f73387022",
+    "colId": "dfd067ea-f7e1-4b1f-be11-4aed7e557148",
+    "containerId": "",
+    "name": "addExerciseToWorkout",
+    "url": "localhost:8001/tw/addExercisePlanToWorkout",
+    "method": "POST",
+    "sortNum": 90000,
+    "created": "2023-04-20T21:50:03.470Z",
+    "modified": "2023-04-20T21:57:18.767Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"WorkoutID\" : 3,\n  \"ExercisePlanID\" : 4\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
