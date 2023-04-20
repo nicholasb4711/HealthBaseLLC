@@ -70,8 +70,18 @@ def get_customer(userID):
                                JOIN WorkoutExercises we ON wh.WorkoutID = we.WorkoutID
         WHERE UserID = {}
     '''.format(userID)
-    #.format(userID)
     return get_data(query)
+
+@trackWorkouts.route('/getWorkoutExercises/<WorkoutID', methods = ['GET'])
+def get_WorkoutExercises(WorkoutID):
+    query = '''
+        SELECT e.ExerciseName, e.NumSets, e.NumReps, e.Weight
+        FROM Workout W JOIN WorkoutExercises WE ON w.WorkoutID = we.WorkoutID
+                       JOIN ExercisePlan e ON we.ExercisePlanID = e.ExercisePlanID
+        WHERE WorkoutID = {}
+    '''.format(WorkoutID)
+    return get_data(query)
+    
 
 # post method for creating an exercise plan
 @trackWorkouts.route('/addExercisePlan', methods = ['POST'])
