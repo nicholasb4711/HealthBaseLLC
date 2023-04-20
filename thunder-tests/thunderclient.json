@@ -272,5 +272,25 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "676dd190-90bf-4a76-badb-dc4c802ae32d",
+    "colId": "dfd067ea-f7e1-4b1f-be11-4aed7e557148",
+    "containerId": "",
+    "name": "getUserWorkoutHistory2",
+    "url": "localhost:8001/tw/users-workout-history/1?userID=2",
+    "method": "GET",
+    "sortNum": 15000,
+    "created": "2023-04-20T23:47:03.108Z",
+    "modified": "2023-04-20T23:47:34.499Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "userID",
+        "value": "2",
+        "isPath": false
+      }
+    ],
+    "tests": []
   }
 ]
