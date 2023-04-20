@@ -46,12 +46,10 @@ def get_customer(userID):
     #.format(userID)
     return get_Data(query)
 
+# Create an exercise plan
 @trackWorkouts.route('/addExercisePlan', methods = ['POST'])
 def add_ExercisePlan():
-    current_app.logger.info('Processing form data')
     req_data = request.get_json()
-    current_app.logger.info(req_data)
-
     CreatorID = req_data['CreatorID']
     NumSets = req_data['NumSets']
     NumReps = req_data['NumReps']
@@ -61,32 +59,21 @@ def add_ExercisePlan():
     insert_stmt = 'INSERT INTO ExercisePlan (CreatorID, NumSets, NumReps, WeightLbs, ExerciseID) VALUES ('
     insert_stmt += str(CreatorID) + ', ' + str(NumSets) + ', ' + str(NumReps) + ', ' + str(Weight) + ', ' + str(ExerciseID) + ')'
 
-    current_app.logger.info(insert_stmt)
+    return post_Data(insert_stmt)
 
-    cursor = db.get_db().cursor()
-    cursor.execute(insert_stmt)
-    db.get_db().commit()
-    return "Success"
-
+# Add an exercise plan to a workout
 @trackWorkouts.route('/addExercisePlanToWorkout', methods = ['POST'])
 def add_ExercisePlanToWorkout():
-    current_app.logger.info('Processing form data')
     req_data = request.get_json()
-    current_app.logger.info(req_data)
-
     WorkoutID = req_data['WorkoutID']
     ExercisePlanID = req_data['ExercisePlanID']
 
     insert_stmt = 'INSERT INTO WorkoutExercises (WorkoutID, ExercisePlanID) VALUES ('
     insert_stmt += str(WorkoutID) + ', ' + str(ExercisePlanID) + ')'
 
-    current_app.logger.info(insert_stmt)
+    return post_Data(insert_stmt)
 
-    cursor = db.get_db().cursor()
-    cursor.execute(insert_stmt)
-    db.get_db().commit()
-    return "Success"
-
+# Create a new workout
 @trackWorkouts.route('/newWorkout', methods = ['POST'])
 def new_Workout():
     req_data = request.get_json()
@@ -105,7 +92,7 @@ def new_Workout():
     
 
 
-
+# Log a workout in WorkoutHistory
 @trackWorkouts.route('/logWorkout', methods = ['POST'])
 def log_Workout():
     req_data = request.get_json()
@@ -133,6 +120,7 @@ def get_Data(query):
 
     return jsonify(json_data)
 
+# general function for executing a MySQL insert statement
 def post_Data(statement):
     current_app.logger.info(statement)
     cursor = db.get_db().cursor()
