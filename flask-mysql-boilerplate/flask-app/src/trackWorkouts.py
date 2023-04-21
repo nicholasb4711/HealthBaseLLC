@@ -8,7 +8,7 @@ trackWorkouts = Blueprint('track workouts', __name__)
 @trackWorkouts.route('/viewUserGoals/<UserID>', methods = ['GET'])
 def view_allGoals(UserID):
     query = '''
-        SELECT GoalName, GoalDesc
+        SELECT GoalID, GoalName, GoalDesc
         FROM Goals g JOIN User u ON g.GoalID = u.Goal
         WHERE u.UserID = {}
     '''.format(UserID)
