@@ -4,6 +4,7 @@ from src import db
 
 trackMeals = Blueprint('trackMeals', __name__)
 
+# get method for retrieving all the food categories
 @trackMeals.route('/categories', methods = ['GET'])
 def get_all_categories():
     query = '''
@@ -14,7 +15,7 @@ def get_all_categories():
     '''
     return get_data(query)
 
-# Get all the foods from the database
+# get all the foods from the database
 @trackMeals.route('/foods', methods=['GET'])
 def get_foods():
     query = '''
@@ -93,6 +94,7 @@ def createMeal():
     insert_stmt += str(TotalCalories) + ', ' + str(TotalFat) + ', ' + str(TotalProtein) + ', ' + str(TotalCarb) + ', "' + MealName + '", "' + DateCreated + '", ' + str(CreatorID) + ')'
     return run_sql_stmt(insert_stmt)
 
+# delete method for deleting a meal plan
 @trackMeals.route('/deleteMealPlan', methods = ["DELETE"])
 def delete_MealPlan():
     req_data = request.get_json()
@@ -101,6 +103,7 @@ def delete_MealPlan():
     insert_stmt = 'DELETE FROM MealPlan WHERE MealPlanID = ' + str(MealPlanID)
     return run_sql_stmt(insert_stmt)
 
+# put method for editing a meal plan
 @trackMeals.route('/editMealPlan', methods = ['PUT'])
 def edit_MealPlan():
     req_data = request.get_json()
@@ -114,7 +117,6 @@ def edit_MealPlan():
     update_stmt += ' WHERE MealPlanID = ' + str(MealPlanID)
     
     return run_sql_stmt(update_stmt)
-
 
 # general method for retrieving data 
 def get_data(query):
