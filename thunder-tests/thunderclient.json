@@ -417,5 +417,19 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "7a18bde8-81d3-4c84-81e9-802e13b86196",
+    "colId": "dfd067ea-f7e1-4b1f-be11-4aed7e557148",
+    "containerId": "",
+    "name": "getUserWorkoutHistory",
+    "url": "localhost:8001/tw/getUserWorkoutPlans/3",
+    "method": "GET",
+    "sortNum": 190000,
+    "created": "2023-04-21T01:15:15.521Z",
+    "modified": "2023-04-21T01:15:38.077Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]

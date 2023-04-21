@@ -175,14 +175,13 @@ def edit_ExercisePlan():
 #@trackWorkouts.route('/deleteExercisePlan', methods = ['DELETE'])
 #def delete_ExercisePlan():
 
-# post method for logging a workout in user's workout history
-@trackWorkouts.route('/getUserWorkouts/<LastName>/<FirstName>', methods = ['GET'])
-def get_UserWorkouts(LastName, FirstName):
+@trackWorkouts.route('/getUserWorkoutPlans/<UserID>', methods = ['GET'])
+def get_UserWorkoutPlans(UserID):
     query = '''
-        SELECT wp.PlanName, wp.PlanDescription, wp.NumWeeks
+        SELECT wp.WorkoutPlanID, wp.PlanName, wp.PlanDescription, wp.NumWeeks
         FROM WorkoutPlan wp JOIN User u ON u.UserID = wp.CreatorID
-        WHERE u.LastName = {} AND u.FirstName = {}
-    '''.format(LastName, FirstName)
+        WHERE u.UserID = {}
+    '''.format(UserID)
     return get_data(query)
 
 
