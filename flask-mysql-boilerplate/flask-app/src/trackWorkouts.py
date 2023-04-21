@@ -5,12 +5,13 @@ from src import db
 trackWorkouts = Blueprint('track workouts', __name__)
 
 # get method for viewing all the Goals in the db
-@trackWorkouts.route('/viewAllGoals', methods = ['GET'])
-def view_allGoals():
+@trackWorkouts.route('/viewUserGoals/<UserID>', methods = ['GET'])
+def view_allGoals(UserID):
     query = '''
         SELECT GoalName, GoalDesc
-        FROM Goals
-    '''
+        FROM Goals g JOIN User u ON g.GoalID = u.Goal
+        WHERE u.UserID = {}
+    '''.format(UserID)
     return get_data(query)
 
 # get method for viewing users based on last and first name
