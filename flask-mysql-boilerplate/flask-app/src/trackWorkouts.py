@@ -60,7 +60,7 @@ def get_allWorkoutHistory():
 
 # get all workout history from the db
 @trackWorkouts.route('/most-recent-workout', methods=['GET'])
-def get_allWorkoutHistory():
+def get_MostRecent():
     query = '''
         SELECT *
         FROM Workout
