@@ -332,10 +332,23 @@
     "method": "GET",
     "sortNum": 140000,
     "created": "2023-04-20T23:21:40.935Z",
-    "modified": "2023-04-20T23:34:29.015Z",
+    "modified": "2023-04-21T00:51:04.495Z",
     "headers": [],
     "params": [],
-    "tests": []
+    "tests": [
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "isjson",
+        "value": ""
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "count",
+        "value": "5"
+      }
+    ]
   },
   {
     "_id": "7abb2259-355c-4106-83ff-27ce5d1a1dc1",
@@ -373,23 +386,22 @@
     "method": "GET",
     "sortNum": 170000,
     "created": "2023-04-21T00:14:14.970Z",
-    "modified": "2023-04-21T00:14:40.269Z",
+    "modified": "2023-04-21T00:50:44.142Z",
     "headers": [],
     "params": [],
-    "tests": []
-  },
-  {
-    "_id": "27f08d34-dd96-49e9-8855-936f8cb2b54b",
-    "colId": "dfd067ea-f7e1-4b1f-be11-4aed7e557148",
-    "containerId": "",
-    "name": "getUserWorkouts",
-    "url": "localhost:8001/tw/getUserWorkouts/'Kim'",
-    "method": "GET",
-    "sortNum": 180000,
-    "created": "2023-04-21T00:35:13.966Z",
-    "modified": "2023-04-21T00:41:42.799Z",
-    "headers": [],
-    "params": [],
-    "tests": []
+    "tests": [
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "isjson",
+        "value": ""
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "count",
+        "value": "1"
+      }
+    ]
   }
 ]
