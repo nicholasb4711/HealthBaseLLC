@@ -70,6 +70,15 @@ Now you should be able to use the app!
 
 - In our app there are several different pages and things a user can do
 
+## Project Structure
+
+- Database: Our SQL Database file is called HealthBaseLLC.sql
+- Diagram: We included a diagram of our project, called healthdb-Schema-DIAGRAM.png
+- SRC Folder:
+    - trackMeals.py:
+    - trackWorkouts.py:
+    - 
+
 
 # Project Comments
 
