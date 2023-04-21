@@ -3,7 +3,7 @@
 HealthBase is a social relational database encompassing everything a user would need in order to manage their physical fitness and wellness. It allows users to store their fitness and nutritional data, such as workouts and daily food intake. More importantly, users can view meals and workouts created by other users by searching their name.
 (With more time, we would've liked to implement some sort of friend/following system)
 
-HealthBase is a comprehensive social relational database for managing physical fitness and wellness. It offers users the ability to store their fitness and nutritional data, including workout and food intake information. Additionally, users can search and access meals and workouts created by other users. With HealthBase, you can easily manage and track your health goals while also discovering new ways to improve your wellness.
+
 
 ## User Personas
 
@@ -105,4 +105,6 @@ Nonetheless, Once our thunderclient/git complications were resolved we worked no
 
 # Video Link
 
-- Video Link HERE: 
+- Project Video Link HERE: 
+
+- Bloopers Video Link:
