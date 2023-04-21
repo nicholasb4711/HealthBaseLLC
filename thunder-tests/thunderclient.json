@@ -431,5 +431,19 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "b6ed98fc-94e2-40cf-8a27-53d9bf5a1cf9",
+    "colId": "3766f139-c776-4274-bc05-f7f072c7422d",
+    "containerId": "",
+    "name": "getUserMealPlans",
+    "url": "localhost:8001/tm/getUserMealPlans/3",
+    "method": "GET",
+    "sortNum": 60000,
+    "created": "2023-04-21T01:27:50.130Z",
+    "modified": "2023-04-21T01:28:18.435Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]

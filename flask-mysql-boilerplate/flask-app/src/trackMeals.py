@@ -55,8 +55,18 @@ def get_highestProteinFoods():
     '''
     return getData(query)
 
+@trackMeals.route('/getUserMealPlans/<UserID>', methods = ['GET'])
+def get_UserWorkoutPlans(UserID):
+    query = '''
+        SELECT mp.MealPlanID, mp.MealPlanName, mp.NumWeeks, GoalName
+        FROM MealPlan mp JOIN User u ON u.UserID = mp.CreatorID
+                         JOIN Goals g ON u.Goal = g.GoalID
+        WHERE u.UserID = {}
+    '''.format(UserID)
+    return get_data(query)
+
 # general method for retrieving data 
-def getData(query):
+def get_data(query):
     cursor = db.get_db().cursor()
     cursor.execute(query)
     # grab the column headers from the returned data
