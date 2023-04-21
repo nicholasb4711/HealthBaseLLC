@@ -79,3 +79,7 @@ Now you should be able to use the app!
     - a more user specific UI, based on the current user and what they need to access
 
 Nonetheless, Once our thunderclient/git complications were resolved we worked nonstop around the clock to complete the project to our best ability.
+
+# Video Link
+
+- Video Link HERE: 
