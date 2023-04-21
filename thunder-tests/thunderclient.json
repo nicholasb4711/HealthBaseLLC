@@ -536,5 +536,32 @@
         "value": ""
       }
     ]
+  },
+  {
+    "_id": "a5d1b9c4-81df-46c9-a2e3-3c63e53137a0",
+    "colId": "3766f139-c776-4274-bc05-f7f072c7422d",
+    "containerId": "",
+    "name": "getMealPlanMeals",
+    "url": "localhost:8001/tm/getMealPlanMeals/2",
+    "method": "GET",
+    "sortNum": 70000,
+    "created": "2023-04-21T01:56:29.354Z",
+    "modified": "2023-04-21T01:58:50.173Z",
+    "headers": [],
+    "params": [],
+    "tests": [
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "count",
+        "value": "3"
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "isjson",
+        "value": ""
+      }
+    ]
   }
 ]

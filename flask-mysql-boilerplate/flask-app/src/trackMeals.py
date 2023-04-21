@@ -65,6 +65,18 @@ def get_UserWorkoutPlans(UserID):
     '''.format(UserID)
     return get_data(query)
 
+
+@trackMeals.route('/getMealPlanMeals/<MealPlanID>', methods = ['GET'])
+def get_MealPlanMeals(MealPlanID):
+    query = '''
+        SELECT m.MealID, m.MealName, m.TotalCalories, m.TotalFat, m.TotalProtein
+        FROM PlanMeals pm JOIN MealPlan mp ON mp.MealPlanID = pm.MealPlanID
+                          JOIN Meals m ON pm.mealID = m.MealID
+        WHERE pm.MealPlanID = {}
+    '''.format(MealPlanID)
+    return get_data(query)
+
+
 # general method for retrieving data 
 def get_data(query):
     cursor = db.get_db().cursor()
