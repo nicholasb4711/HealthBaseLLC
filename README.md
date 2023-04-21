@@ -73,4 +73,9 @@ Now you should be able to use the app!
 
 # Project Comments
 
-- Due to issues with our thunder client/git merging complications, we were severely delayed in building our project because we had to spend a lot of time troubleshooting to no avail, and ultimately had to wait for Prof. Fontenot's help to resolve these issues. This ultimately shortened our timeline and there were several features we unfortunately didn't have time to implement. Once our issues were resolved we worked nonstop around the clock to complete the project to our best ability.
+- Due to issues with our thunder client/git merging complications, we were severely delayed in building our project because we had to spend a lot of time troubleshooting to no avail, and ultimately had to wait for Prof. Fontenot's help to resolve these issues. This ultimately shortened our timeline and there were several features we unfortunately didn't have time to implement. With more time, we would have liked to fully round it out and implement many features, some being:
+
+    - A Friend/following system
+    - a more user specific UI, based on the current user and what they need to access
+
+Nonetheless, Once our thunderclient/git complications were resolved we worked nonstop around the clock to complete the project to our best ability.
