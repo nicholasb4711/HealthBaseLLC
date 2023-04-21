@@ -12,7 +12,7 @@ def get_all_categories():
         WHERE category IS NOT NULL
         ORDER BY category
     '''
-    return getData(query)
+    return get_data(query)
 
 # Get all the foods from the database
 @trackMeals.route('/foods', methods=['GET'])
@@ -20,7 +20,7 @@ def get_foods():
     query = '''
         SELECT FoodID, ServingSizeGrams, FoodName FROM Foods
     '''
-    return getData(query)
+    return get_data(query)
 
 # get the top 10 lowest calorie from the database
 @trackMeals.route('/top10lowestCalorie', methods=['GET'])
@@ -31,7 +31,7 @@ def get_lowestCalorieFoods():
         ORDER BY Calories ASC
         LIMIT 10
     '''
-    return getData(query)
+    return get_data(query)
 
 # get the top 10 lowest calorie from the database
 @trackMeals.route('/top10highestCalorie', methods=['GET'])
@@ -42,7 +42,7 @@ def get_highestCalorieFoods():
         ORDER BY Calories DESC
         LIMIT 10
     '''
-    return getData(query)
+    return get_data(query)
 
 # get the top 10 lowest calorie from the database
 @trackMeals.route('/highestProtein', methods=['GET'])
@@ -53,7 +53,7 @@ def get_highestProteinFoods():
         ORDER BY Protein DESC
         LIMIT 10
     '''
-    return getData(query)
+    return get_data(query)
 
 @trackMeals.route('/getUserMealPlans/<UserID>', methods = ['GET'])
 def get_UserWorkoutPlans(UserID):
