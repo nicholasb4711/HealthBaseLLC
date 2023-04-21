@@ -173,6 +173,22 @@ def edit_ExercisePlan():
     
     return run_sql_stmt(update_stmt)
 
+"""
+@trackWorkouts.route('/deleteWorkoutPlan/<WorkoutPlanID>', methods = ['DELETE'])
+def delete_ExercisePlan(WorkoutPlanID):
+    req_data = request.get_json()
+    PlanID = req_data['PlanID']
+    NumSets = req_data['NumSets']
+    NumReps = req_data['NumReps']
+    Weight = req_data['Weight']
+    ExerciseID = req_data['ExerciseID']
+
+    update_stmt = 'UPDATE ExercisePlan SET NumSets = ' + str(NumSets) + ', NumReps = ' + str(NumReps) + ', WeightLbs = ' + str(Weight) + ', ExerciseID = ' + str(ExerciseID)
+    update_stmt += ' WHERE PlanID = ' + str(PlanID)
+    
+    return run_sql_stmt(update_stmt)
+"""
+
 #@trackWorkouts.route('/deleteExercisePlan', methods = ['DELETE'])
 #def delete_ExercisePlan():
 
