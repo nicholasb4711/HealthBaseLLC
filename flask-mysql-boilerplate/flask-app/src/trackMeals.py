@@ -55,6 +55,7 @@ def get_highestProteinFoods():
     '''
     return get_data(query)
 
+# get route for viewing a specific user's meal plans
 @trackMeals.route('/getUserMealPlans/<UserID>', methods = ['GET'])
 def get_UserWorkoutPlans(UserID):
     query = '''
@@ -65,7 +66,7 @@ def get_UserWorkoutPlans(UserID):
     '''.format(UserID)
     return get_data(query)
 
-
+# get route for viewing which meals are in a specific meal plan
 @trackMeals.route('/getMealPlanMeals/<MealPlanID>', methods = ['GET'])
 def get_MealPlanMeals(MealPlanID):
     query = '''
@@ -90,6 +91,14 @@ def createMeal():
 
     insert_stmt = 'INSERT INTO Meals (TotalCalories, TotalFat, TotalCarb, TotalProtein, MealName, DateCreated, CreatorID) VALUES ('
     insert_stmt += str(TotalCalories) + ', ' + str(TotalFat) + ', ' + str(TotalProtein) + ', ' + str(TotalCarb) + ', "' + MealName + '", "' + DateCreated + '", ' + str(CreatorID) + ')'
+    return run_sql_stmt(insert_stmt)
+
+@trackMeals.route('/deleteMealPlan', methods = ["DELETE"])
+def delete_MealPlan():
+    req_data = request.get_json()
+    MealPlanID = req_data['MealPlanID']
+
+    insert_stmt = 'DELETE FROM MealPlan WHERE MealPlanID = ' + str(MealPlanID)
     return run_sql_stmt(insert_stmt)
 
 
