@@ -409,11 +409,11 @@
     "colId": "dfd067ea-f7e1-4b1f-be11-4aed7e557148",
     "containerId": "",
     "name": "viewUsers",
-    "url": "localhost:8001/tw/viewUsers/'Jin/'Kim'",
+    "url": "localhost:8001/tw/viewUsers/'Jin'/'Kim'",
     "method": "GET",
     "sortNum": 180000,
     "created": "2023-04-21T01:00:07.689Z",
-    "modified": "2023-04-21T01:03:47.258Z",
+    "modified": "2023-04-21T01:07:38.356Z",
     "headers": [],
     "params": [],
     "tests": []
