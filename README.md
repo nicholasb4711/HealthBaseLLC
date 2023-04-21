@@ -73,12 +73,24 @@ Now you should be able to use the app!
 
 # Project Comments
 
+## Our Issues
+
+### TimeLine Constrictions
+
 - Due to issues with our thunder client/git merging complications, we were severely delayed in building our project because we had to spend a lot of time troubleshooting to no avail, and ultimately had to wait for Prof. Fontenot's help to resolve these issues. This ultimately shortened our timeline and there were several features we unfortunately didn't have time to implement. With more time, we would have liked to fully round it out and implement many features, some being:
 
     - A Friend/following system
     - a more user specific UI, based on the current user and what they need to access
 
 Nonetheless, Once our thunderclient/git complications were resolved we worked nonstop around the clock to complete the project to our best ability.
+
+### Group Commit Numbers
+
+- Merge Conflicts were the foundation of a lot of our issues when building the app, so our solution was to only have one person/device working on a certain part of the app at a time, which was streamed to a TV as we all worked on it and talked through it.
+
+- We all collectively collaborated on the project equally, however due to the issue of the merge conflicts, only some devices were able to push/pull updates for the appsmith repo/project repo, which is why it may appear that some users did significantly more or less than others. We collaborated as a team to make edits and would together push updates to the repo. We want that to be known by the reviewers.
+
+
 
 # Video Link
 
