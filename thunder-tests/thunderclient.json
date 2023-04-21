@@ -605,7 +605,7 @@
     "method": "DELETE",
     "sortNum": 200000,
     "created": "2023-04-21T02:22:07.903Z",
-    "modified": "2023-04-21T02:27:22.851Z",
+    "modified": "2023-04-21T02:29:28.544Z",
     "headers": [],
     "params": [],
     "body": {
@@ -613,6 +613,19 @@
       "raw": "{\n  \"WorkoutPlanID\" : 3\n}",
       "form": []
     },
-    "tests": []
+    "tests": [
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "contains",
+        "value": "Success"
+      },
+      {
+        "type": "res-time",
+        "custom": "",
+        "action": "<",
+        "value": "100"
+      }
+    ]
   }
 ]
