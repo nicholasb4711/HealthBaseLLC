@@ -101,6 +101,20 @@ def delete_MealPlan():
     insert_stmt = 'DELETE FROM MealPlan WHERE MealPlanID = ' + str(MealPlanID)
     return run_sql_stmt(insert_stmt)
 
+@trackMeals.route('/editMealPlan', methods = ['PUT'])
+def edit_MealPlan():
+    req_data = request.get_json()
+    MealPlanID = req_data['MealPlanID']
+    NumWeeks = req_data['NumWeeks']
+    MealPlanName = req_data['MealPlanName']
+    CreatorID = req_data['CreatorID']
+    GoalID = req_data['GoalID']
+
+    update_stmt = 'UPDATE MealPlan SET NumWeeks = ' + str(NumWeeks) + ', MealPlanName = "' + MealPlanName + '", CreatorID = ' + str(CreatorID) + ', GoalID = ' + str(GoalID)
+    update_stmt += ' WHERE MealPlanID = ' + str(MealPlanID)
+    
+    return run_sql_stmt(update_stmt)
+
 
 # general method for retrieving data 
 def get_data(query):

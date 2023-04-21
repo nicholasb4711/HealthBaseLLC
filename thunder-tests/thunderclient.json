@@ -659,5 +659,37 @@
         "value": "100"
       }
     ]
+  },
+  {
+    "_id": "2a896bb0-3419-4d47-a878-123e360bb9bb",
+    "colId": "3766f139-c776-4274-bc05-f7f072c7422d",
+    "containerId": "",
+    "name": "editMealPlan",
+    "url": "localhost:8001/tm/editMealPlan",
+    "method": "PUT",
+    "sortNum": 100000,
+    "created": "2023-04-21T02:38:43.148Z",
+    "modified": "2023-04-21T02:41:17.815Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"MealPlanID\" : 2,\n  \"NumWeeks\" : 4,\n  \"MealPlanName\" : \"Bodybuilding Plan\",\n  \"CreatorID\" : 10,\n  \"GoalID\" : 4\n}",
+      "form": []
+    },
+    "tests": [
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "equal",
+        "value": "Success"
+      },
+      {
+        "type": "res-time",
+        "custom": "",
+        "action": "<",
+        "value": "100"
+      }
+    ]
   }
 ]
