@@ -14,7 +14,7 @@ def view_allGoals():
     return get_data(query)
 
 # get method for viewing users based on last and first name
-@trackWorkouts.route('/viewUsers/<FirstName>/<LastName', methods = ['GET'])
+@trackWorkouts.route('/viewUsers/<FirstName>/<LastName>', methods = ['GET'])
 def view_Users(FirstName, LastName):
     query = '''
         SELECT UserID, FirstName, LastName
