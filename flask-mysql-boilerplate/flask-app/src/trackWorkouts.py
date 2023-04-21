@@ -4,7 +4,7 @@ from src import db
 
 trackWorkouts = Blueprint('track workouts', __name__)
 
-# get method for viewing all the Goals in the db
+# get method for viewing a specific user's goal
 @trackWorkouts.route('/viewUserGoals/<UserID>', methods = ['GET'])
 def view_allGoals(UserID):
     query = '''
@@ -39,7 +39,6 @@ def new_user():
     insert_stmt += LastName + '", "' + FirstName + '", ' + str(Age) + ', ' + str(Height) + ', ' + str(Weight) + ', ' + str(GoalID) + ')'
 
     return run_sql_stmt(insert_stmt)
-
 
 # get method for viewing all the muscle groups in the db
 @trackWorkouts.route('/viewMuscleGroups', methods = ['GET'])
@@ -105,7 +104,6 @@ def get_WorkoutExercises(WorkoutID):
     '''.format(WorkoutID)
     return get_data(query)
     
-
 # post method for creating an exercise plan
 @trackWorkouts.route('/addExercisePlan', methods = ['POST'])
 def add_ExercisePlan():
@@ -159,6 +157,7 @@ def log_Workout():
     insert_stmt += str(UserID) + ', "' + Date + '", ' + str(WorkoutID) + ')'
     return run_sql_stmt(insert_stmt)
 
+# put method for editing an exercise plan
 @trackWorkouts.route('/editExercisePlan', methods = ['PUT'])
 def edit_ExercisePlan():
     req_data = request.get_json()
@@ -173,6 +172,20 @@ def edit_ExercisePlan():
     
     return run_sql_stmt(update_stmt)
 
+# put method for updating a goal description
+@trackWorkouts.route('/editGoal', methods = ['PUT'])
+def edit_GoalDesc():
+    req_data = request.get_json()
+    GoalID = req_data['GoalID']
+    GoalName = req_data['GoalName']
+    GoalDesc = req_data['GoalDesc']
+
+    update_stmt = 'UPDATE Goals SET GoalName = "' + GoalName + '", GoalDesc = "' + GoalDesc + '"'
+    update_stmt += ' WHERE GoalID = ' + str(GoalID)
+    
+    return run_sql_stmt(update_stmt)
+
+# delete method for deleting a workout plan
 @trackWorkouts.route('/deleteWorkoutPlan', methods = ["DELETE"])
 def delete_WorkoutPlan():
     req_data = request.get_json()
@@ -181,6 +194,7 @@ def delete_WorkoutPlan():
     insert_stmt = 'DELETE FROM WorkoutPlan WHERE WorkoutPlanID = ' + str(WorkoutPlanID)
     return run_sql_stmt(insert_stmt)
 
+# get method for retrieving a specific user's workout plans
 @trackWorkouts.route('/getUserWorkoutPlans/<UserID>', methods = ['GET'])
 def get_UserWorkoutPlans(UserID):
     query = '''
@@ -189,7 +203,6 @@ def get_UserWorkoutPlans(UserID):
         WHERE u.UserID = {}
     '''.format(UserID)
     return get_data(query)
-
 
 # general function for retrieving data
 def get_data(query):
