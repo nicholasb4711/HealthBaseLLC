@@ -172,7 +172,7 @@ def edit_ExercisePlan():
     
     return run_sql_stmt(update_stmt)
 
-# put method for updating a goal description
+# put method for updating a goal
 @trackWorkouts.route('/editGoal', methods = ['PUT'])
 def edit_GoalDesc():
     req_data = request.get_json()
