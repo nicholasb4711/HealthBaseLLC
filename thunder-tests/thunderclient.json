@@ -64,7 +64,7 @@
     "method": "GET",
     "sortNum": 10000,
     "created": "2023-04-19T21:35:17.992Z",
-    "modified": "2023-04-20T21:14:17.867Z",
+    "modified": "2023-04-20T23:56:43.120Z",
     "headers": [],
     "params": [
       {
@@ -73,7 +73,20 @@
         "isPath": false
       }
     ],
-    "tests": []
+    "tests": [
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "isjson",
+        "value": ""
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "count",
+        "value": "21"
+      }
+    ]
   },
   {
     "_id": "200092b5-9011-4a95-ab1d-d85c4a138201",
@@ -98,10 +111,23 @@
     "method": "GET",
     "sortNum": 40000,
     "created": "2023-04-20T20:23:38.758Z",
-    "modified": "2023-04-20T21:14:32.003Z",
+    "modified": "2023-04-20T23:57:10.892Z",
     "headers": [],
     "params": [],
-    "tests": []
+    "tests": [
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "isjson",
+        "value": ""
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "count",
+        "value": "13"
+      }
+    ]
   },
   {
     "_id": "fb849274-9ab1-4328-bb51-91f1b6892e41",
@@ -112,10 +138,23 @@
     "method": "GET",
     "sortNum": 60000,
     "created": "2023-04-20T20:32:02.100Z",
-    "modified": "2023-04-20T21:14:37.122Z",
+    "modified": "2023-04-20T23:57:33.903Z",
     "headers": [],
     "params": [],
-    "tests": []
+    "tests": [
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "isjson",
+        "value": ""
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "count",
+        "value": "5"
+      }
+    ]
   },
   {
     "_id": "ea461359-84ab-43e5-b491-40de35a21783",
@@ -126,7 +165,7 @@
     "method": "POST",
     "sortNum": 70000,
     "created": "2023-04-20T21:33:25.867Z",
-    "modified": "2023-04-20T21:36:13.721Z",
+    "modified": "2023-04-20T23:58:27.276Z",
     "headers": [],
     "params": [],
     "body": {
@@ -134,7 +173,20 @@
       "raw": "{\n  \"UserID\" : 4,\n  \"WorkoutID\" : 3,\n  \"Date\" : \"2022-03-01 08:00:00\"\n}",
       "form": []
     },
-    "tests": []
+    "tests": [
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "equal",
+        "value": "Success"
+      },
+      {
+        "type": "res-time",
+        "custom": "",
+        "action": "<",
+        "value": "30"
+      }
+    ]
   },
   {
     "_id": "e72499bf-6e23-4aed-a098-e4d1740ab622",
@@ -145,7 +197,7 @@
     "method": "POST",
     "sortNum": 80000,
     "created": "2023-04-20T21:45:05.070Z",
-    "modified": "2023-04-20T21:46:12.943Z",
+    "modified": "2023-04-20T23:59:37.023Z",
     "headers": [],
     "params": [],
     "body": {
@@ -153,7 +205,20 @@
       "raw": "{\n  \"CreatorID\" : 4,\n  \"NumSets\" : 3,\n  \"NumReps\" : 8,\n  \"Weight\" : 225,\n  \"ExerciseID\" : 1\n}",
       "form": []
     },
-    "tests": []
+    "tests": [
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "equal",
+        "value": "Success"
+      },
+      {
+        "type": "res-time",
+        "custom": "",
+        "action": "<",
+        "value": "30"
+      }
+    ]
   },
   {
     "_id": "25418efb-7707-4ec8-9a1d-9b8f73387022",
@@ -164,15 +229,22 @@
     "method": "POST",
     "sortNum": 90000,
     "created": "2023-04-20T21:50:03.470Z",
-    "modified": "2023-04-20T21:57:18.767Z",
+    "modified": "2023-04-21T00:00:53.048Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"WorkoutID\" : 3,\n  \"ExercisePlanID\" : 4\n}",
+      "raw": "{\n  \"WorkoutID\" : 5,\n  \"ExercisePlanID\" : 10\n}",
       "form": []
     },
-    "tests": []
+    "tests": [
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "equal",
+        "value": "Success"
+      }
+    ]
   },
   {
     "_id": "076e5640-18ad-48c3-8995-ec32295f2a70",
@@ -260,26 +332,6 @@
     "tests": []
   },
   {
-    "_id": "676dd190-90bf-4a76-badb-dc4c802ae32d",
-    "colId": "dfd067ea-f7e1-4b1f-be11-4aed7e557148",
-    "containerId": "",
-    "name": "getUserWorkoutHistory2",
-    "url": "localhost:8001/tw/users-workout-history/1?userID=2",
-    "method": "GET",
-    "sortNum": 15000,
-    "created": "2023-04-20T23:47:03.108Z",
-    "modified": "2023-04-20T23:47:34.499Z",
-    "headers": [],
-    "params": [
-      {
-        "name": "userID",
-        "value": "2",
-        "isPath": false
-      }
-    ],
-    "tests": []
-  },
-  {
     "_id": "7abb2259-355c-4106-83ff-27ce5d1a1dc1",
     "colId": "dfd067ea-f7e1-4b1f-be11-4aed7e557148",
     "containerId": "",
@@ -288,7 +340,7 @@
     "method": "GET",
     "sortNum": 30000,
     "created": "2023-04-20T23:49:45.210Z",
-    "modified": "2023-04-20T23:52:06.116Z",
+    "modified": "2023-04-21T00:00:17.367Z",
     "headers": [],
     "params": [],
     "tests": [
@@ -299,10 +351,10 @@
         "value": ""
       },
       {
-        "type": "Content-Length",
+        "type": "res-body",
         "custom": "",
-        "action": ">",
-        "value": "20"
+        "action": "count",
+        "value": "82"
       }
     ]
   }
