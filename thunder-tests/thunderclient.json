@@ -701,7 +701,7 @@
     "method": "PUT",
     "sortNum": 210000,
     "created": "2023-04-21T03:29:42.071Z",
-    "modified": "2023-04-21T03:30:53.951Z",
+    "modified": "2023-04-21T03:32:28.322Z",
     "headers": [],
     "params": [],
     "body": {
@@ -709,6 +709,19 @@
       "raw": "{\n  \"GoalID\":2,\n  \"GoalName\":\"Bodybuilding\",\n  \"GoalDesc\": \"Build lean muscle\"\n}",
       "form": []
     },
-    "tests": []
+    "tests": [
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "equal",
+        "value": "Success"
+      },
+      {
+        "type": "res-time",
+        "custom": "",
+        "action": "<",
+        "value": "100"
+      }
+    ]
   }
 ]
