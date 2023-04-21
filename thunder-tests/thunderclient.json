@@ -627,5 +627,37 @@
         "value": "100"
       }
     ]
+  },
+  {
+    "_id": "1cac7f58-80e4-4a56-8417-7d41d584dc1f",
+    "colId": "3766f139-c776-4274-bc05-f7f072c7422d",
+    "containerId": "",
+    "name": "deleteMealPlan",
+    "url": "localhost:8001/tm/deleteMealPlan",
+    "method": "DELETE",
+    "sortNum": 90000,
+    "created": "2023-04-21T02:30:51.464Z",
+    "modified": "2023-04-21T02:32:52.127Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"MealPlanID\" : 3\n}",
+      "form": []
+    },
+    "tests": [
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "equal",
+        "value": "Success"
+      },
+      {
+        "type": "res-time",
+        "custom": "",
+        "action": "<",
+        "value": "100"
+      }
+    ]
   }
 ]
