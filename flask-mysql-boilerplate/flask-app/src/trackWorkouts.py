@@ -58,6 +58,17 @@ def get_allWorkoutHistory():
     '''
     return get_data(query)
 
+# get all workout history from the db
+@trackWorkouts.route('/most-recent-workout', methods=['GET'])
+def get_allWorkoutHistory():
+    query = '''
+        SELECT *
+        FROM Workout
+        ORDER BY WorkoutID DESC
+        LIMIT 1
+    '''
+    return get_data(query)
+
 # get method for retrieving a user's workout history
 @trackWorkouts.route('/users-workout-history/<userID>', methods=['GET'])
 def get_customer(userID):
