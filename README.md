@@ -43,3 +43,33 @@ Quincy has just been diagnosed with Type 2 Diabetes. She needs to keep careful w
 - Appsmith: Appsmith is an open-source framework for building internal tools. It allows developers to build complex applications quickly and easily.
 - SQL: SQL is a programming language used to manage and manipulate relational databases. It is used to store, retrieve, and manipulate data in a relational database management system.
 - Visual Studio: Visual Studio is a comprehensive integrated development environment (IDE) used
+
+
+## Getting Started
+
+- In order to get started using this database app, you will need to open the terminal (if on Mac) or Windows Powershell (Windows)
+- Next, navigate to the directory of where this project is stored, then navigate into the flask-mysql-boilerplate folder using the cd command. This is an EXAMPLE of what your terminal should show when you are located inside the folder:
+        
+        C:\Users\nicho\OneDrive\Desktop\School\Spring 2023\CS3200 Database Design\CS3200\HealthBaseLLC\flask-mysql-boilerplate
+
+- The general path may be different depending on your location, but should end in \HealthBaseLLC\flask-mysql-boilerplate
+- Next, make sure docker is open and in your terminal/powershell enter the following commands, and wait for them to complete before entering the next command:
+
+        - docker compose build
+        - docker compose up
+
+- At this point, the docker container should be running and you should see a web, db, and appsmith container running.
+
+- Next, in your internet browser, navigate to the following URL: localhost:8080
+
+Now you should be able to use the app!
+
+
+## App Use
+
+- In our app there are several different pages and things a user can do
+
+
+# Project Comments
+
+- Due to issues with our thunder client/git merging complications, we were severely delayed in building our project because we had to spend a lot of time troubleshooting to no avail, and ultimately had to wait for Prof. Fontenot's help to resolve these issues. This ultimately shortened our timeline and there were several features we unfortunately didn't have time to implement. Once our issues were resolved we worked nonstop around the clock to complete the project to our best ability.
