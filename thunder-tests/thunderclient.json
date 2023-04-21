@@ -563,5 +563,37 @@
         "value": ""
       }
     ]
+  },
+  {
+    "_id": "8cec1053-8e14-4ccd-82c9-3061c81dada6",
+    "colId": "3766f139-c776-4274-bc05-f7f072c7422d",
+    "containerId": "",
+    "name": "createMeal",
+    "url": "localhost:8001/tm/createMeal",
+    "method": "POST",
+    "sortNum": 80000,
+    "created": "2023-04-21T02:07:49.848Z",
+    "modified": "2023-04-21T02:14:01.397Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"TotalCalories\" : 300,\n  \"TotalFat\" : 20,\n  \"TotalProtein\" : 20,\n  \"TotalCarb\" : 50,\n  \"MealName\" : \"Chicken and Rice\",\n  \"DateCreated\" : \"2023-04-19 12:00:00\",\n  \"CreatorID\" : 4\n}",
+      "form": []
+    },
+    "tests": [
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "contains",
+        "value": "Success"
+      },
+      {
+        "type": "res-time",
+        "custom": "",
+        "action": "<",
+        "value": "100"
+      }
+    ]
   }
 ]

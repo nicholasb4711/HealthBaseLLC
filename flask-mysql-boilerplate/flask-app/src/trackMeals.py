@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify, make_response
+from flask import Blueprint, current_app, request, jsonify, make_response
 import json
 from src import db
 
@@ -76,6 +76,22 @@ def get_MealPlanMeals(MealPlanID):
     '''.format(MealPlanID)
     return get_data(query)
 
+# post route for adding a meal to the database
+@trackMeals.route('/createMeal', methods = ['POST'])
+def createMeal():
+    req_data = request.get_json()
+    TotalCalories = req_data['TotalCalories']
+    TotalFat = req_data['TotalFat']
+    TotalProtein = req_data['TotalProtein']
+    TotalCarb = req_data['TotalCarb']
+    MealName = req_data['MealName']
+    DateCreated = req_data['DateCreated']
+    CreatorID = req_data['CreatorID']
+
+    insert_stmt = 'INSERT INTO Meals (TotalCalories, TotalFat, TotalCarb, TotalProtein, MealName, DateCreated, CreatorID) VALUES ('
+    insert_stmt += str(TotalCalories) + ', ' + str(TotalFat) + ', ' + str(TotalProtein) + ', ' + str(TotalCarb) + ', "' + MealName + '", "' + DateCreated + '", ' + str(CreatorID) + ')'
+    return run_sql_stmt(insert_stmt)
+
 
 # general method for retrieving data 
 def get_data(query):
@@ -97,3 +113,11 @@ def get_data(query):
         json_data.append(dict(zip(column_headers, row)))
 
     return jsonify(json_data)
+
+# general function for executing a MySQL insert statement
+def run_sql_stmt(statement):
+    current_app.logger.info(statement)
+    cursor = db.get_db().cursor()
+    cursor.execute(statement)
+    db.get_db().commit()
+    return "Success"
