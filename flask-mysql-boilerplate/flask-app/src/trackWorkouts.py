@@ -13,6 +13,16 @@ def view_allGoals():
     '''
     return get_data(query)
 
+# get method for viewing users based on last and first name
+@trackWorkouts.route('/viewUsers/<FirstName>/<LastName', methods = ['GET'])
+def view_Users(FirstName, LastName):
+    query = '''
+        SELECT UserID, FirstName, LastName
+        FROM User
+        WHERE FirstName LIKE {} AND LastName LIKE {}
+    '''.format(FirstName, LastName)
+    return get_data(query)
+
 # post method for creating a new user
 @trackWorkouts.route('/newUser', methods = ['POST'])
 def new_user():
