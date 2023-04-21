@@ -58,7 +58,7 @@ def get_highestProteinFoods():
 # general method for retrieving data 
 def getData(query):
     cursor = db.get_db().cursor()
-    cursor.execute(query);
+    cursor.execute(query)
     # grab the column headers from the returned data
     column_headers = [x[0] for x in cursor.description]
 
