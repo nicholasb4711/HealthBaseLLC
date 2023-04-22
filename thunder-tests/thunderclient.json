@@ -8,10 +8,23 @@
     "method": "GET",
     "sortNum": 10000,
     "created": "2023-04-18T21:09:03.454Z",
-    "modified": "2023-04-21T02:48:44.087Z",
+    "modified": "2023-04-21T03:37:17.177Z",
     "headers": [],
     "params": [],
-    "tests": []
+    "tests": [
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "count",
+        "value": "98"
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "isjson",
+        "value": ""
+      }
+    ]
   },
   {
     "_id": "4486e150-c4b4-47f1-b69b-825eb60c3965",
@@ -22,10 +35,23 @@
     "method": "GET",
     "sortNum": 20000,
     "created": "2023-04-18T21:16:34.959Z",
-    "modified": "2023-04-21T02:48:40.255Z",
+    "modified": "2023-04-21T03:37:32.942Z",
     "headers": [],
     "params": [],
-    "tests": []
+    "tests": [
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "isjson",
+        "value": ""
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "count",
+        "value": "98"
+      }
+    ]
   },
   {
     "_id": "42174a9d-7eda-4143-af45-10f6db231855",
@@ -36,10 +62,23 @@
     "method": "GET",
     "sortNum": 30000,
     "created": "2023-04-19T21:19:58.728Z",
-    "modified": "2023-04-21T02:48:32.460Z",
+    "modified": "2023-04-21T03:37:45.983Z",
     "headers": [],
     "params": [],
-    "tests": []
+    "tests": [
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "count",
+        "value": "10"
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "isjson",
+        "value": ""
+      }
+    ]
   },
   {
     "_id": "bf4d012b-893e-460e-9833-cdbaf00d4bb0",
@@ -50,10 +89,23 @@
     "method": "GET",
     "sortNum": 40000,
     "created": "2023-04-19T21:25:55.158Z",
-    "modified": "2023-04-21T02:48:49.249Z",
+    "modified": "2023-04-21T03:38:07.945Z",
     "headers": [],
     "params": [],
-    "tests": []
+    "tests": [
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "isjson",
+        "value": ""
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "count",
+        "value": "10"
+      }
+    ]
   },
   {
     "_id": "fdf9ef22-38f1-425a-bb1a-9d15321a7ef9",
@@ -97,10 +149,23 @@
     "method": "GET",
     "sortNum": 50000,
     "created": "2023-04-19T21:43:19.236Z",
-    "modified": "2023-04-21T02:48:53.210Z",
+    "modified": "2023-04-21T03:38:22.124Z",
     "headers": [],
     "params": [],
-    "tests": []
+    "tests": [
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "isjson",
+        "value": ""
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "count",
+        "value": "10"
+      }
+    ]
   },
   {
     "_id": "e67f4b47-0951-4a12-bb61-e7ef586ddd94",
@@ -675,6 +740,38 @@
     "body": {
       "type": "json",
       "raw": "{\n  \"MealPlanID\" : 2,\n  \"NumWeeks\" : 4,\n  \"MealPlanName\" : \"Bodybuilding Plan\",\n  \"CreatorID\" : 10,\n  \"GoalID\" : 4\n}",
+      "form": []
+    },
+    "tests": [
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "equal",
+        "value": "Success"
+      },
+      {
+        "type": "res-time",
+        "custom": "",
+        "action": "<",
+        "value": "100"
+      }
+    ]
+  },
+  {
+    "_id": "7c21b50e-ddb2-4056-bd3e-d12de2ede6d9",
+    "colId": "dfd067ea-f7e1-4b1f-be11-4aed7e557148",
+    "containerId": "",
+    "name": "editGoalDesc",
+    "url": "localhost:8001/tw/editGoal",
+    "method": "PUT",
+    "sortNum": 210000,
+    "created": "2023-04-21T03:29:42.071Z",
+    "modified": "2023-04-21T03:32:28.322Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"GoalID\":2,\n  \"GoalName\":\"Bodybuilding\",\n  \"GoalDesc\": \"Build lean muscle\"\n}",
       "form": []
     },
     "tests": [
